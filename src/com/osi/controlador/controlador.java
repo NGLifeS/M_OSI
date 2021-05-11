@@ -260,8 +260,11 @@ public class controlador implements ActionListener{
         try {
             view.jlblTexto.setText(view.jtxtDatoTexto.getText());
             view.jtxtDatoTexto.setText("");
+            /*
             bytes = view.jlblTexto.getText().getBytes();
             mensaje = bytes.toString();
+            */            
+            mensaje =  view.jlblTexto.getText();
         } catch (Exception e) {
         }
     }
@@ -347,7 +350,9 @@ public class controlador implements ActionListener{
         view.jlblMACD.setText(pcod.get(1).getMAC());
         view.jlblPCD.setText(pcod.get(1).getIP());
         this.osi = new OSI(mensaje, pcod.get(0), pcod.get(1));
-        osi.enviarMensaje();
+        
+        //osi.enviarMensaje();
+        osi.mensaje2();
     }
     
 }
