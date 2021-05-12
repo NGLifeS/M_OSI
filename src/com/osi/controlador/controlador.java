@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import m_osi.JF_OSI;
@@ -29,6 +30,8 @@ public class controlador implements ActionListener{
     private ArrayList<PC> pcs;
     private ArrayList<PC> pcod;
     DefaultTableModel modelo = new DefaultTableModel();
+    //
+    private JLabel etiqueta;
     //
     private String mensaje;
     private FileInputStream entrada;
@@ -176,6 +179,30 @@ public class controlador implements ActionListener{
             view.jbtnProbar.setVisible(false);
             view.jpOSI.setVisible(true);
             OSi();
+            mover();
+            view.jlblMove.setLocation(0, 0);
+            Move mover = new Move(view.jlblMove, view.jlblMove1, view.jlblMove2, view.jlblMove3, view);
+            mover.start();
+            System.out.println(view.jlblMove.getLocation());
+            view.jlblMove3.setLocation(0, 0);
+            System.out.println(view.jlblMove3.getLocation());
+            Move mover1 = new Move(view.jlblMove3, view.jlblMove2, view.jlblMove5, view.jlblMove4, view);
+            mover1.start();
+            view.jlblMove4.setLocation(0, 0);
+            Move mover2 = new Move(view.jlblMove4, view.jlblMove5, view.jlblMove6, view.jlblMove7, view);
+            mover2.start();
+            view.jlblMove7.setLocation(0, 0);
+            Move mover3 = new Move(view.jlblMove7, view.jlblMove6, view.jlblMove9, view.jlblMove8, view);
+            mover3.start();
+            view.jlblMove8.setLocation(0, 0);
+            Move mover4 = new Move(view.jlblMove8, view.jlblMove9, view.jlblMove10, view.jlblMove11, view);
+            mover4.start();
+            view.jlblMove11.setLocation(0, 0);
+            Move mover5 = new Move(view.jlblMove11, view.jlblMove10, view.jlblMove13, view.jlblMove12, view);
+            mover5.start();/*
+            view.jlblMove.setLocation(0, 0);
+            Move mover6 = new Move(view.jlblMove, view.jlblMove1, view.jlblMove2, view.jlblMove3, view);
+            mover.start();*/
         }
     }
     
@@ -355,4 +382,38 @@ public class controlador implements ActionListener{
         osi.mensaje2();
     }
     
+    public void mover() {
+        int x = view.jlblMove.getX();
+        int y = view.jlblMove.getY();
+        
+        System.out.println(view.jlblMove.getLocation());
+        System.out.println(view.jlblMove2.getLocation());
+        System.out.println(view.jlblMove3.getLocation());
+        System.out.println(view.jlblMove4.getLocation());
+        /*
+        while (view.jlblMove.getX() < 283) {            
+            view.jlblMove.setLocation(x+1, y);
+        }*/
+    }
+    
+    public void Move() {
+        int x, y;
+        while (true) {            
+            try {
+                Thread.sleep((10));
+                x = view.jlblMove.getX();
+                y = view.jlblMove.getY();
+                if (x < 283) {
+                    etiqueta.setLocation(etiqueta.getLocation().x + 10, etiqueta.getLocation().y);
+                    view.jpOSI.repaint();
+                }else {
+                    break;
+                }
+            } catch (Exception e) {
+            }
+            if (true) {
+                
+            }
+        }
+    }
 }
