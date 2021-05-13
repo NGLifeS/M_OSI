@@ -16,6 +16,8 @@ public class OSI {
     private String ipDestino;
     private String macOrigen;
     private String macDestino;
+    private String APDU, PPDU, SPDU, PAQUETE, TRAMA, BIT;
+    private ArrayList<String> TPDU = new ArrayList<>();
 
     public OSI() {
     }
@@ -229,11 +231,39 @@ public class OSI {
     public String getMacDestino() {
         return macDestino;
     }
+
+    public String getAPDU() {
+        return APDU;
+    }
+
+    public String getPPDU() {
+        return PPDU;
+    }
+
+    public String getSPDU() {
+        return SPDU;
+    }
+
+    public String getPAQUETE() {
+        return PAQUETE;
+    }
+
+    public String getTRAMA() {
+        return TRAMA;
+    }
+
+    public String getBIT() {
+        return BIT;
+    }
+
+    public ArrayList<String> getTPDU() {
+        return TPDU;
+    }
     
     //
     public void mensaje2() {
-        String APDU, PPDU, SPDU, PAQUETE, TRAMA, BIT;
-        ArrayList<String> TPDU = new ArrayList<>();
+        
+        
         
         System.out.println("-----------------------------------");
         System.out.println("Capa de Aplicacion");
