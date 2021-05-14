@@ -283,10 +283,10 @@ public class OSI {
         for (int i = 0; i < segmento.size(); i++) {
             TPDU.add("TH"+ "/" + segmento.get(i));
             System.out.println(TPDU.get(i));        
-        }   /*
+        } 
         System.out.println("-----------------------------------");
         System.out.println("Capa de Red");
-        PAQUETE = pcOrigen.getIP() + "/" + pcDestino.getIP() + "/" + TPDU;
+        PAQUETE = pcOrigen.getIP() + "/" + pcDestino.getIP() + "/";
         System.out.println(PAQUETE);
         System.out.println("-----------------------------------");
         System.out.println("Capa de Enlace de Datos");
@@ -295,7 +295,7 @@ public class OSI {
         System.out.println("-----------------------------------");
         System.out.println("Capa Fisica");
         BIT = textToBinary(TRAMA);
-        System.out.println(BIT);*/
+        System.out.println(BIT);
     }
     
     public String decimalToBinary(int decimal) {

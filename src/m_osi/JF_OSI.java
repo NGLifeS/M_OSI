@@ -77,16 +77,6 @@ public class JF_OSI extends javax.swing.JFrame {
         jlblIPCO = new javax.swing.JLabel();
         jlblMACO = new javax.swing.JLabel();
         jlblPCO = new javax.swing.JLabel();
-        jlblIPCD = new javax.swing.JLabel();
-        jlblMACD = new javax.swing.JLabel();
-        jlblAD = new javax.swing.JLabel();
-        jlblRD = new javax.swing.JLabel();
-        jlblPCD = new javax.swing.JLabel();
-        jlblTD = new javax.swing.JLabel();
-        jlblPD = new javax.swing.JLabel();
-        jlblSD = new javax.swing.JLabel();
-        jlblFD = new javax.swing.JLabel();
-        jlblED = new javax.swing.JLabel();
         jlblMove = new javax.swing.JLabel();
         jlblMove2 = new javax.swing.JLabel();
         jlblMove3 = new javax.swing.JLabel();
@@ -102,6 +92,16 @@ public class JF_OSI extends javax.swing.JFrame {
         jlblMove12 = new javax.swing.JLabel();
         jlblMove13 = new javax.swing.JLabel();
         jlblMove14 = new javax.swing.JLabel();
+        jlblRD = new javax.swing.JLabel();
+        jlblSD = new javax.swing.JLabel();
+        jlblFD = new javax.swing.JLabel();
+        jlblIPCD = new javax.swing.JLabel();
+        jlblPD = new javax.swing.JLabel();
+        jlblMACD = new javax.swing.JLabel();
+        jlblTD = new javax.swing.JLabel();
+        jlblAD = new javax.swing.JLabel();
+        jlblPCD = new javax.swing.JLabel();
+        jlblED = new javax.swing.JLabel();
         jmbOSI = new javax.swing.JMenuBar();
         jmPC = new javax.swing.JMenu();
         jmiIngresarPC = new javax.swing.JMenuItem();
@@ -336,7 +336,7 @@ public class JF_OSI extends javax.swing.JFrame {
         jpArchivoLayout.setHorizontalGroup(
             jpArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpArchivoLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(jbtnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
             .addGroup(jpArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,7 +349,7 @@ public class JF_OSI extends javax.swing.JFrame {
             jpArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpArchivoLayout.createSequentialGroup()
                 .addComponent(jbtnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 4, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
             .addGroup(jpArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jpArchivoLayout.createSequentialGroup()
                     .addGap(6, 6, 6)
@@ -370,7 +370,7 @@ public class JF_OSI extends javax.swing.JFrame {
         jpDato.setLayout(jpDatoLayout);
         jpDatoLayout.setHorizontalGroup(
             jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlblTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(jlblTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
             .addGroup(jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jpDatoLayout.createSequentialGroup()
                     .addComponent(jlblArchivoT, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
@@ -449,29 +449,23 @@ public class JF_OSI extends javax.swing.JFrame {
 
         jlblIPCO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PC.png"))); // NOI18N
 
-        jlblIPCD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PC.png"))); // NOI18N
-
-        jlblAD.setText("Aplicación");
+        jlblMove14.setText("jLabel1");
 
         jlblRD.setText("Red");
-
-        jlblTD.setText("Transporte");
-
-        jlblPD.setText("Presentación");
 
         jlblSD.setText("Sesión");
 
         jlblFD.setText("Física");
 
+        jlblIPCD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PC.png"))); // NOI18N
+
+        jlblPD.setText("Presentación");
+
+        jlblTD.setText("Transporte");
+
+        jlblAD.setText("Aplicación");
+
         jlblED.setText("Enlace de datos");
-
-        jlblMove.setText("jLabel1");
-
-        jlblMove12.setText("jLabel1");
-
-        jlblMove13.setText("jLabel1");
-
-        jlblMove14.setText("jLabel1");
 
         javax.swing.GroupLayout jpOSILayout = new javax.swing.GroupLayout(jpOSI);
         jpOSI.setLayout(jpOSILayout);
@@ -494,8 +488,8 @@ public class JF_OSI extends javax.swing.JFrame {
                             .addComponent(jlblMACO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jlblIPCO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jlblMove, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE))
+                        .addComponent(jlblMove, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jpOSILayout.createSequentialGroup()
                         .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jlblSO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -518,8 +512,6 @@ public class JF_OSI extends javax.swing.JFrame {
                     .addComponent(jlblMove10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblMove13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblMove9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(274, 274, 274)
-                .addComponent(jlblMove14, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlblED, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -534,7 +526,9 @@ public class JF_OSI extends javax.swing.JFrame {
                             .addComponent(jlblIPCD)
                             .addComponent(jlblAD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlblRD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlblFD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jlblFD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlblMove14, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jpOSILayout.setVerticalGroup(
             jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -547,7 +541,7 @@ public class JF_OSI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblAO, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlblMove)
+                    .addComponent(jlblMove, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblMove1))
                 .addGap(32, 32, 32)
                 .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -560,8 +554,10 @@ public class JF_OSI extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlblFO, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlblMove12)
-                            .addComponent(jlblMove13)))
+                            .addComponent(jlblMove13)
+                            .addGroup(jpOSILayout.createSequentialGroup()
+                                .addComponent(jlblMove12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jpOSILayout.createSequentialGroup()
                         .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlblPO, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -583,6 +579,10 @@ public class JF_OSI extends javax.swing.JFrame {
                             .addComponent(jlblMove8)
                             .addComponent(jlblMove9)))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOSILayout.createSequentialGroup()
+                .addGap(540, 540, 540)
+                .addComponent(jlblMove14)
+                .addContainerGap())
+            .addGroup(jpOSILayout.createSequentialGroup()
                 .addComponent(jlblIPCD)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlblMACD, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -598,25 +598,20 @@ public class JF_OSI extends javax.swing.JFrame {
                         .addGap(144, 144, 144)
                         .addComponent(jlblSD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jlblFD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlblMove14)))
+                        .addComponent(jlblFD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpOSILayout.createSequentialGroup()
                         .addComponent(jlblPD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89)
                         .addComponent(jlblTD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(jlblRD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpEnviarLayout = new javax.swing.GroupLayout(jpEnviar);
         jpEnviar.setLayout(jpEnviarLayout);
         jpEnviarLayout.setHorizontalGroup(
             jpEnviarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpEnviarLayout.createSequentialGroup()
-                .addComponent(jpOSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jpEnviarLayout.createSequentialGroup()
                 .addGap(218, 218, 218)
                 .addGroup(jpEnviarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -625,6 +620,9 @@ public class JF_OSI extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(jbtnProbar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jpEnviarLayout.createSequentialGroup()
+                .addComponent(jpOSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jpEnviarLayout.setVerticalGroup(
             jpEnviarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,14 +668,14 @@ public class JF_OSI extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 37, Short.MAX_VALUE)
-                    .addComponent(jpEscogerPC, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE)
+                    .addComponent(jpEscogerPC, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
                     .addGap(0, 37, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
+                .addComponent(jpDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+                    .addComponent(jpEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 820, Short.MAX_VALUE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -688,14 +686,14 @@ public class JF_OSI extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jpEscogerPC, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+                    .addComponent(jpEscogerPC, javax.swing.GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE))
+                .addComponent(jpDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
+                    .addComponent(jpEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 602, Short.MAX_VALUE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 

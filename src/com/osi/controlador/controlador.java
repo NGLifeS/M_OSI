@@ -179,8 +179,8 @@ public class controlador implements ActionListener{
             view.jbtnProbar.setVisible(false);
             view.jpOSI.setVisible(true);
             OSi();
-            view.jlblMove.setLocation(0, 0);
-            Move mover = new Move(view.jlblMove, view.jlblMove1, view.jlblMove2, view.jlblMove3, view, this.osi);
+            //view.jlblMove.setLocation(0, 0);
+            Move mover = new Move(view.jlblMove, view, this.osi);
             mover.start();
             
             moverr();
@@ -413,7 +413,10 @@ public class controlador implements ActionListener{
         System.out.println(view.jlblMove11.getLocation());
         System.out.println(view.jlblMove10.getLocation());
         System.out.println(view.jlblMove13.getLocation());
+        //
+        System.out.println("--------------------------------------");
         System.out.println(view.jlblMove12.getLocation());
+        System.out.println(view.jlblMove14.getLocation());
         /*
         while (view.jlblMove.getX() < 283) {            
             view.jlblMove.setLocation(x+1, y);

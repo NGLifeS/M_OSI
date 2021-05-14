@@ -84,12 +84,12 @@
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
-                  <Component id="jpEscogerPC" pref="766" max="32767" attributes="0"/>
+                  <Component id="jpEscogerPC" pref="767" max="32767" attributes="0"/>
                   <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
-              <Component id="jpDatos" alignment="1" pref="840" max="32767" attributes="0"/>
+              <Component id="jpDatos" alignment="1" pref="844" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
@@ -109,12 +109,12 @@
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jpEscogerPC" pref="620" max="32767" attributes="0"/>
+                  <Component id="jpEscogerPC" pref="622" max="32767" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
-              <Component id="jpDatos" alignment="1" pref="622" max="32767" attributes="0"/>
+              <Component id="jpDatos" alignment="1" pref="627" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
@@ -643,7 +643,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                       <Component id="jbtnCargar" min="-2" pref="168" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
@@ -660,7 +660,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jbtnCargar" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -707,7 +707,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jlblTexto" alignment="0" pref="423" max="32767" attributes="0"/>
+                  <Component id="jlblTexto" alignment="0" pref="425" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jlblArchivoT" pref="413" max="32767" attributes="0"/>
@@ -773,10 +773,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <Component id="jpOSI" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -787,6 +783,10 @@
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jpOSI" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -854,8 +854,8 @@
                                   <Component id="jlblIPCO" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlblMove" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                              <Component id="jlblMove" min="-2" pref="492" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -884,8 +884,6 @@
                           <Component id="jlblMove13" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="jlblMove9" min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
-                      <Component id="jlblMove14" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jlblED" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
@@ -905,6 +903,8 @@
                               </Group>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jlblMove14" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -919,7 +919,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jlblAO" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jlblMove" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblMove" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jlblMove1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -934,8 +934,11 @@
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jlblFO" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="jlblMove12" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jlblMove13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlblMove12" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -966,6 +969,11 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="540" max="-2" attributes="0"/>
+                      <Component id="jlblMove14" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jlblIPCD" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jlblMACD" min="-2" pref="17" max="-2" attributes="0"/>
@@ -981,10 +989,7 @@
                               <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                               <Component id="jlblSD" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jlblFD" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="jlblMove14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jlblFD" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jlblPD" min="-2" pref="25" max="-2" attributes="0"/>
@@ -994,7 +999,7 @@
                               <Component id="jlblRD" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1073,62 +1078,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jlblIPCD">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagenes/PC.png"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblMACD">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblAD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Aplicaci&#xf3;n"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblRD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Red"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblPCD">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblTD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Transporte"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblPD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblSD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sesi&#xf3;n"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblFD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="F&#xed;sica"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlblED">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Enlace de datos"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jlblMove">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1189,17 +1139,11 @@
               </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jlblMove12">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jlblMove13">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1211,6 +1155,58 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblRD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Red"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblSD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sesi&#xf3;n"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblFD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="F&#xed;sica"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblIPCD">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/PC.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblPD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblMACD">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblTD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Transporte"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblAD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Aplicaci&#xf3;n"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblPCD">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblED">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Enlace de datos"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
