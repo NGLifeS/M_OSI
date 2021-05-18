@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class OSI {
+
     private String mensaje;
     //
     private PC pcOrigen;
@@ -21,7 +22,7 @@ public class OSI {
 
     public OSI() {
     }
-    
+
     public OSI(String mensaje, PC pcOrigen, PC pcDestino) {
         this.mensaje = mensaje;
         this.pcOrigen = pcOrigen;
@@ -32,8 +33,8 @@ public class OSI {
         this.ipDestino = " ";
         this.macOrigen = " ";
         this.macDestino = " ";
-    }    
-    
+    }
+
     public void enviarMensaje() {
         //
         System.out.println("----------");
@@ -51,7 +52,7 @@ public class OSI {
         System.out.println("----------");
         System.out.println("Desencriptando mensajes recibidos");
         desencriptarMensaje();
-        
+
         System.out.println("Mensaje desencriptado correctamente");
         System.out.println("Host Origen: " + pcOrigen.getIP());
         //
@@ -62,22 +63,22 @@ public class OSI {
         capaDeEnlace();
         dispositivoSwitch();
         desencriptarMensaje();
-        */
+         */
     }
-    
+
     public void segmentacion(String mensaje) {
         //
         System.out.println("Segmentando mensaje ........");
         //
         int partes = mensaje.length() / 5 + 1;
-        if (mensaje.length()%5 == 0) {
+        if (mensaje.length() % 5 == 0) {
             partes -= 1;
         }
         int indiceMensaje = 0;
         for (int i = 0; i < partes; i++) {
             String parte = String.valueOf(i);
             int j = 0;
-            while (j < 5 && indiceMensaje < mensaje.length()) {                
+            while (j < 5 && indiceMensaje < mensaje.length()) {
                 parte = parte + mensaje.charAt(indiceMensaje);
                 j++;
                 indiceMensaje++;
@@ -86,13 +87,13 @@ public class OSI {
             segm.add(parte);
         }
         //
-         for (String mensajeString : segmento) {
+        for (String mensajeString : segmento) {
             System.out.println(mensajeString);
         }
         System.out.println("Mensaje segmentado correctamente");
         //
     }
-    
+
     public void multiplex() {
         Collections.shuffle(segmento);
         //
@@ -102,7 +103,7 @@ public class OSI {
         System.out.println("Mensaje multiplexado correctamente");
         //
     }
-    
+
     public void capaDeRed() {
         //
         System.out.println("Mensaje a enviar: " + mensaje);
@@ -111,7 +112,7 @@ public class OSI {
         //
         paquete = pcOrigen.getIP() + "/" + pcDestino.getIP();
     }
-    
+
     public void capaDeEnlace() {
         //
         System.out.println("MAC de origen: " + pcOrigen.getMAC());
@@ -119,16 +120,16 @@ public class OSI {
         //
         trama = pcOrigen.getMAC() + "/" + pcDestino.getMAC();
     }
-    
-    public void dispositivoSwitch() {        
+
+    public void dispositivoSwitch() {
         int bandera = 0;
         int bandera2 = 0;
-        
+
         //
         System.out.println("Buscando ip de origen y destino: ");
         System.out.println("Paquete: " + paquete);
         //
-        
+
         for (int i = 0; i < paquete.length(); i++) {
             if (paquete.charAt(i) == '/') {
                 bandera = 1;
@@ -139,11 +140,11 @@ public class OSI {
             } else {
                 ipDestino = ipDestino + paquete.charAt(i);
             }
-        }        
+        }
         //
         System.out.println("IP Origen: " + ipOrigen);
         System.out.println("IP Destino: " + ipDestino);
-        
+
         System.out.println("Buscando MAC de orige y destino: ");
         System.out.println("Trama: " + trama);
         //
@@ -161,7 +162,7 @@ public class OSI {
         //
         System.out.println("MAC Origen: " + macOrigen);
         System.out.println("MAC Destino: " + macDestino);
-            
+
         System.out.println("Enlace realizado correctamente");
         System.out.println("Enviando mensaje al destino: ");
         //
@@ -178,7 +179,7 @@ public class OSI {
         System.out.println("Mensaje enviado correctamente");
         //
     }
-    
+
     public void desencriptarMensaje() {
         //
         String hey;
@@ -186,7 +187,7 @@ public class OSI {
         System.out.println("Desencriptando mensaje......");
         //
         pcDestino.desencriptarMensajes();
-    }   
+    }
 
     public String getMensaje() {
         return mensaje;
@@ -259,12 +260,10 @@ public class OSI {
     public ArrayList<String> getTPDU() {
         return TPDU;
     }
-    
+
     //
     public void mensaje2() {
-        
-        
-        
+
         System.out.println("-----------------------------------");
         System.out.println("Capa de Aplicacion");
         APDU = "protocolo" + "/" + mensaje;
@@ -281,36 +280,36 @@ public class OSI {
         System.out.println("Capa de Transporte");
         segmentacion(mensaje);
         for (int i = 0; i < segmento.size(); i++) {
-            TPDU.add("TH"+ "/" + segmento.get(i));
-            System.out.println(TPDU.get(i));        
-        } 
+            TPDU.add("TH" + "/" + segmento.get(i));
+            System.out.println(TPDU.get(i));
+        }
         System.out.println("-----------------------------------");
         System.out.println("Capa de Red");
         PAQUETE = pcOrigen.getIP() + "/" + pcDestino.getIP() + "/";
         System.out.println(PAQUETE);
         System.out.println("-----------------------------------");
         System.out.println("Capa de Enlace de Datos");
-        TRAMA =  pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE;
+        TRAMA = pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE;
         System.out.println(TRAMA);
         System.out.println("-----------------------------------");
         System.out.println("Capa Fisica");
         BIT = textToBinary(TRAMA);
         System.out.println(BIT);
     }
-    
+
     public String decimalToBinary(int decimal) {
-    if (decimal <= 0) {
-        return "0";
+        if (decimal <= 0) {
+            return "0";
+        }
+        String binary = "";
+        while (decimal > 0) {
+            short remainder = (short) (decimal % 2);
+            decimal = decimal / 2;
+            binary = String.valueOf(remainder) + binary;
+        }
+        return binary;
     }
-    String binary = "";
-    while (decimal > 0) {
-        short remainder = (short) (decimal % 2);
-        decimal = decimal / 2;
-        binary = String.valueOf(remainder) + binary;
-    }
-    return binary;
-    }
-    
+
     public String textToBinary(String mensaje) {
         String binaryText = "";
         for (int i = 0; i < mensaje.length(); i++) {
@@ -319,12 +318,12 @@ public class OSI {
             String binary = decimalToBinary(ascii);
             for (int j = 8; j > 0; j--) {
                 if (binary.length() < 8) {
-                   binary = "0" + binary;
+                    binary = "0" + binary;
                 }
             }
             binaryText += binary + " ";
         }
-            
+
         return binaryText;
     }
     //

@@ -5,113 +5,526 @@
  */
 package com.osi.modelo;
 
-import javax.swing.JLabel;
 import m_osi.JF_OSI;
 
 /**
  *
  * @author Sora
  */
-public class Move extends Thread{
-    
-    private JLabel etiqueta;
+public class Move extends Thread {
+
     private JF_OSI osi;
     private OSI oSi;
 
-    public Move(JLabel etiqueta, JF_OSI osi, OSI oSi) {
-        this.etiqueta = etiqueta;
+    public Move(JF_OSI osi, OSI oSi) {
         this.osi = osi;
         this.oSi = oSi;
     }
-    
+
     @Override
     public void run() {
-        
-        
+
         int x, y;
-        int xD = 307;
-        int xI = 160;
-        int yB = 224;
-        for (int i = 0; i < 8; i++) {
-            
-            for (int j = 0; j < oSi.getSegmento().size(); j++) {
-                
-                switch(i) {
-                    case 0:
-                        osi.jlblMove.setText(oSi.getAPDU());
-                        etiqueta.setLocation(130, 171);
-                        etiqueta.getLocation();
-                        break;
-                    case 1:
-                        osi.jlblMove.setText(oSi.getPPDU());
-                        etiqueta.setLocation(130, 224);
-                        etiqueta.getLocation();
-                        break;
-                    case 2:
-                        osi.jlblMove.setText(oSi.getSPDU());
-                        etiqueta.setLocation(130, 281);
-                        etiqueta.getLocation();
-                        break;
-                    case 3:
-                        osi.jlblMove.setText(oSi.getSegmento().get(j));
-                        etiqueta.setLocation(130, 338);
-                        etiqueta.getLocation();
-                        break;
-                    case 4:
-                        osi.jlblMove.setText(oSi.getPAQUETE()+oSi.getSegmento().get(j));
-                        etiqueta.setLocation(130, 395);
-                        etiqueta.getLocation();
-                        break;
-                    case 5:
-                        osi.jlblMove.setText(oSi.getTRAMA()+oSi.getSegmento().get(j));
-                        etiqueta.setLocation(130, 452);
-                        etiqueta.getLocation();
-                        break;
-                    case 6:
-                        osi.jlblMove.setText(oSi.getBIT());
-                        etiqueta.setLocation(130, 504);
-                        etiqueta.getLocation();
-                        break;/*
-                    case 7:
-                        osi.jlblMove.setText(oSi.getTRAMA());
-                        etiqueta.setLocation(160, 564);
-                        etiqueta.getLocation();
-                        break;*/
-                }
 
-                while (true) {            
-                    try {
-                        sleep(100);
-                        x = etiqueta.getLocation().x;
-                        y = etiqueta.getLocation().y;
-                        if (x < xD) {
-                            etiqueta.setLocation(x + 10, y);
-                            //osi.jpOSI.repaint();
-                        }else if(y < yB) {
-                            etiqueta.setLocation(x, y + 10);
-                            osi.jpOSI.repaint();
-                        }else {
-                            break;
-                        }
-                    } catch (Exception e) {
-                    }
-                }
+        for (int i = 0; i < 13; i++) {
 
-                while (true) {            
-                    try {
-                        sleep(100);
-                        x = etiqueta.getLocation().x;
-                        if(x > xI){
-                            etiqueta.setLocation(x - 10, y);
-                            osi.jpOSI.repaint();
-                        }else {
-                            break;
+            switch (i) {
+                case 0:
+                    osi.jlblMoveAO.setText(oSi.getAPDU());
+                    osi.jlblMoveAO.setLocation(130, 167);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveAO.getLocation().x;
+                            y = osi.jlblMoveAO.getLocation().y;
+                            if (x < 307) {
+                                osi.jlblMoveAO.setLocation(x + 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y < 224) {
+                                osi.jlblMoveAO.setLocation(x, y + 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
                         }
-                    } catch (Exception e) {
                     }
-                }
+
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveAO.getLocation().x;
+                            if (x > 130) {
+                                osi.jlblMoveAO.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMoveAO.setText("");
+                    break;
+                case 1:
+                    osi.jlblMovePO.setText(oSi.getPPDU());
+                    osi.jlblMovePO.setLocation(130, 224);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMovePO.getLocation().x;
+                            y = osi.jlblMovePO.getLocation().y;
+                            if (x < 307) {
+                                osi.jlblMovePO.setLocation(x + 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y < 283) {
+                                osi.jlblMovePO.setLocation(x, y + 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMovePO.getLocation().x;
+                            if (x > 130) {
+                                osi.jlblMovePO.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMovePO.setText("");
+                    break;
+                case 2:
+                    osi.jlblMoveSO.setText(oSi.getSPDU());
+                    osi.jlblMoveSO.setLocation(130, 283);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveSO.getLocation().x;
+                            y = osi.jlblMoveSO.getLocation().y;
+                            if (x < 307) {
+                                osi.jlblMoveSO.setLocation(x + 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y < 338) {
+                                osi.jlblMoveSO.setLocation(x, y + 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveSO.getLocation().x;
+                            if (x > 130) {
+                                osi.jlblMoveSO.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMoveSO.setText("");
+                    break;
+                case 3:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveTO.setText(oSi.getSegmento().get(j));
+                        osi.jlblMoveTO.setLocation(130, 338);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveTO.getLocation().x;
+                                y = osi.jlblMoveTO.getLocation().y;
+                                if (x < 307) {
+                                    osi.jlblMoveTO.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y < 395) {
+                                    osi.jlblMoveTO.setLocation(x, y + 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveTO.getLocation().x;
+                                if (x > 130) {
+                                    osi.jlblMoveTO.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        osi.jlblMoveTO.setText("");
+                    }
+                    break;
+                case 4:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveRO.setText(oSi.getPAQUETE() + oSi.getSegmento().get(j));
+                        osi.jlblMoveRO.setLocation(130, 395);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveRO.getLocation().x;
+                                y = osi.jlblMoveRO.getLocation().y;
+                                if (x < 307) {
+                                    osi.jlblMoveRO.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y < 452) {
+                                    osi.jlblMoveRO.setLocation(x, y + 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveRO.getLocation().x;
+                                if (x > 130) {
+                                    osi.jlblMoveRO.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        osi.jlblMoveRO.setText("");
+                    }
+                    break;
+                case 5:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveEO.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
+                        osi.jlblMoveEO.setLocation(130, 452);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveEO.getLocation().x;
+                                y = osi.jlblMoveEO.getLocation().y;
+                                if (x < 307) {
+                                    osi.jlblMoveEO.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y < 509) {
+                                    osi.jlblMoveEO.setLocation(x, y + 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveEO.getLocation().x;
+                                if (x > 130) {
+                                    osi.jlblMoveEO.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                            osi.jlblMoveEO.setText("");
+                        }
+                    }
+                    break;
+                case 6:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveFO.setText(oSi.getBIT());
+                        osi.jlblMoveFO.setLocation(130, 509);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveFO.getLocation().x;
+                                y = osi.jlblMoveFO.getLocation().y;
+                                if (x < 619) {
+                                    osi.jlblMoveFO.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        osi.jlblMoveFO.setText("");
+                    }
+                    break;
+                case 7:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveFD.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
+                        osi.jlblMoveFD.setLocation(619, 509);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveFD.getLocation().x;
+                                y = osi.jlblMoveFD.getLocation().y;
+                                if (x > 442) {
+                                    osi.jlblMoveFD.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y > 452) {
+                                    osi.jlblMoveFD.setLocation(x, y - 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveFD.getLocation().x;
+                                if (x < 442) {
+                                    osi.jlblMoveFD.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                            osi.jlblMoveFD.setText("");
+                        }
+                    }
+                    break;
+                case 8:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveED.setText(oSi.getPAQUETE() + oSi.getSegmento().get(j));
+                        osi.jlblMoveED.setLocation(619, 452);
+                        while (true) {
+                            try {
+
+                                sleep(100);
+                                x = osi.jlblMoveED.getLocation().x;
+                                y = osi.jlblMoveED.getLocation().y;
+                                if (x > 442) {
+                                    osi.jlblMoveED.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y > 395) {
+                                    osi.jlblMoveED.setLocation(x, y - 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveED.getLocation().x;
+                                if (x < 442) {
+                                    osi.jlblMoveED.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                            osi.jlblMoveED.setText("");
+                        }
+                    }
+                    break;
+                case 9:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveRD.setText(oSi.getSegmento().get(j));
+                        osi.jlblMoveRD.setLocation(619, 395);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveRD.getLocation().x;
+                                y = osi.jlblMoveRD.getLocation().y;
+                                if (x > 442) {
+                                    osi.jlblMoveRD.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y > 338) {
+                                    osi.jlblMoveRD.setLocation(x, y - 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveRD.getLocation().x;
+                                if (x < 442) {
+                                    osi.jlblMoveRD.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        osi.jlblMoveRD.setText("");
+                    }
+                    break;
+                case 10:
+                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
+                        osi.jlblMoveTD.setText(oSi.getSPDU());
+                        osi.jlblMoveTD.setLocation(619, 338);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveTD.getLocation().x;
+                                y = osi.jlblMoveTD.getLocation().y;
+                                if (x > 442) {
+                                    osi.jlblMoveTD.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y > 283) {
+                                    osi.jlblMoveTD.setLocation(x, y - 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveTD.getLocation().x;
+                                if (x < 442) {
+                                    osi.jlblMoveTD.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                            }
+                        }
+                        osi.jlblMoveTD.setText("");
+                    }
+                    break;
+
+                case 11:
+                    osi.jlblMoveSD.setText(oSi.getPPDU());
+                    osi.jlblMoveSD.setLocation(619, 283);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveSD.getLocation().x;
+                            y = osi.jlblMoveSD.getLocation().y;
+                            if (x > 442) {
+                                osi.jlblMoveSD.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y > 224) {
+                                osi.jlblMoveSD.setLocation(x, y - 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveSD.getLocation().x;
+                            if (x < 442) {
+                                osi.jlblMoveSD.setLocation(x + 10, y);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMoveSD.setText("");
+                    break;
+                case 12:
+                    osi.jlblMovePD.setText(oSi.getAPDU());
+                    osi.jlblMovePD.setLocation(619, 224);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMovePD.getLocation().x;
+                            y = osi.jlblMovePD.getLocation().y;
+                            if (x > 442) {
+                                osi.jlblMovePD.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y > 167) {
+                                osi.jlblMovePD.setLocation(x, y - 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMovePD.getLocation().x;
+                            if (x < 442) {
+                                osi.jlblMovePD.setLocation(x + 10, y);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMovePD.setText("");
+                    break;
+                case 13:
+                    osi.jlblMoveAD.setText(""/*oSi.getAPDU()*/);
+                    osi.jlblMoveAD.setLocation(619, 167);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveAD.getLocation().x;
+                            y = osi.jlblMoveAD.getLocation().y;
+                            if (x > 442) {
+                                osi.jlblMoveAD.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y > 224) {
+                                osi.jlblMoveAD.setLocation(x, y - 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveAD.getLocation().x;
+                            if (x < 442) {
+                                osi.jlblMoveAD.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMoveAD.setText("");
+                    break;
             }
-            yB += 57; 
-       }
+        }
     }
 }

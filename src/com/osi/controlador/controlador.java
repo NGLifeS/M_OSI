@@ -23,7 +23,8 @@ import m_osi.JF_OSI;
  *
  * @author Sora
  */
-public class controlador implements ActionListener{
+public class controlador implements ActionListener {
+
     private JF_OSI view;
     private PC pc;
     private OSI osi;
@@ -40,15 +41,14 @@ public class controlador implements ActionListener{
     private JFileChooser seleccionado;
     byte[] bytes;
 
-
     public controlador(JF_OSI view) {
         this.view = view;
         iniciar();
         this.pcs = new ArrayList<>();
         this.pcod = new ArrayList<>();
-        this.mensaje =  "";
+        this.mensaje = "";
         this.seleccionado = new JFileChooser();
-        this.bytes = new byte[1024*100];
+        this.bytes = new byte[1024 * 100];
         //
         this.view.jmiIngresarPC.addActionListener(this);
         this.view.jbtnEnviar.addActionListener(this);
@@ -78,7 +78,7 @@ public class controlador implements ActionListener{
         pcs.add(pc3);
         //
     }
-    
+
     public void iniciar() {
         view.setLocationRelativeTo(null);
         view.jpIngresoPC.setVisible(false);
@@ -87,7 +87,7 @@ public class controlador implements ActionListener{
         view.jpEnviar.setVisible(false);
         view.jpPrincipal.setVisible(true);
     }
-        
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.jmiIngresarPC) {
@@ -153,7 +153,7 @@ public class controlador implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(null, "Nesecita ingresar texto");
             }
-                
+
         }
         //
         if (e.getSource() == view.jmiEnviar) {
@@ -179,57 +179,76 @@ public class controlador implements ActionListener{
             view.jbtnProbar.setVisible(false);
             view.jpOSI.setVisible(true);
             OSi();
-            //view.jlblMove.setLocation(0, 0);
-            Move mover = new Move(view.jlblMove, view, this.osi);
+            Move mover = new Move(view, this.osi);
             mover.start();
-            
-            moverr();
-            //System.out.println(view.jlblMove.getLocation());
+            System.out.println(view.jlblMoveAO.getLocation());
+            System.out.println(view.jlblMovePO.getLocation());
+            System.out.println(view.jlblMoveSO.getLocation());
+            System.out.println(view.jlblMoveTO.getLocation());
+            System.out.println(view.jlblMoveRO.getLocation());
+            System.out.println(view.jlblMoveEO.getLocation());
+            System.out.println(view.jlblMoveFO.getLocation());
+            System.out.println(view.jlblMoveAD.getLocation());
+            System.out.println(view.jlblMovePD.getLocation());
+            System.out.println(view.jlblMoveSD.getLocation());
+            System.out.println(view.jlblMoveTD.getLocation());
+            System.out.println(view.jlblMoveRD.getLocation());
+            System.out.println(view.jlblMoveED.getLocation());
+            System.out.println(view.jlblMoveFD.getLocation());
+            System.out.println("Otro");
+            System.out.println(view.jlblAD.getLocation());
+            System.out.println(view.jlblPD.getLocation());
+            System.out.println(view.jlblSD.getLocation());
+            System.out.println(view.jlblTD.getLocation());
+            System.out.println(view.jlblRD.getLocation());
+            System.out.println(view.jlblED.getLocation());
+            System.out.println(view.jlblFD.getLocation());
         }
         //
     }
-    
+
     public void agregarPC() {
         String MAC = view.jtxtMAC.getText();
         String IP = view.jtxtIP.getText();
         pc = new PC(IP, MAC);
-        pcs.add(pc);        
+        pcs.add(pc);
         listarPC();
     }
-    
+
     public void limpiarByte() {
-        bytes = new byte[1024*100];
+        bytes = new byte[1024 * 100];
     }
-    
+
     public void limpiar() {
         view.jtxtMAC.setText("");
         view.jtxtIP.setText("");
     }
-    
-    public DefaultTableModel listarPC() {        
-        modelo = (DefaultTableModel)view.jtPCS.getModel();
+
+    public DefaultTableModel listarPC() {
+        modelo = (DefaultTableModel) view.jtPCS.getModel();
         String[] objeto = new String[3];
         modelo.getDataVector().removeAllElements();
         for (int i = 0; i < pcs.size(); i++) {
-            objeto[0] = "PC " + (i+1);
+            objeto[0] = "PC " + (i + 1);
             objeto[1] = pcs.get(i).getMAC();
-            objeto[2] = pcs.get(i).getIP();   
+            objeto[2] = pcs.get(i).getIP();
             modelo.addRow(objeto);
         }
         return modelo;
     }
+
     //
     public void escogerPC() {
         try {
             int index = view.jtPCSe.getSelectedRow();
             if (view.jlblMACOrigen.getText().equals("")) {
                 view.jlblMACOrigen.setText(view.jtPCS.getValueAt(index, 1).toString());
-                view.jlblIPOrigen.setText(view.jtPCS.getValueAt(index, 2).toString());                  
+                view.jlblIPOrigen.setText(view.jtPCS.getValueAt(index, 2).toString());
             }
             if (view.jlblMACOrigen.getText() != view.jtPCS.getValueAt(index, 1) && view.jlblMACDestino.getText().equals("")) {
                 view.jlblMACDestino.setText(view.jtPCS.getValueAt(index, 1).toString());
-                view.jlblIPDestino.setText(view.jtPCS.getValueAt(index, 2).toString());                  
-            }           
+                view.jlblIPDestino.setText(view.jtPCS.getValueAt(index, 2).toString());
+            }
             pcod.clear();
             //Esto ------------------------------------------------------------------------------------------------------------------------------
             for (int i = 0; i < pcs.size(); i++) {
@@ -237,22 +256,24 @@ public class controlador implements ActionListener{
                     pcod.add(0, pcs.get(i));
                 }
             }
-            
+
             for (int i = 0; i < pcs.size(); i++) {
                 if (pcs.get(i).getMAC().equals(view.jlblMACDestino.getText())) {
                     pcod.add(1, pcs.get(i));
                 }
             }
-        }catch(Exception e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una PC");
         }
     }
+
     //
     public void limpiarLblOSI() {
         view.jlblArchivoI.setIcon(null);
         view.jlblArchivoT.setText("");
         view.jlblTexto.setText("");
     }
+
     public void TipoDato() {
         if (view.jcbTipoDato.getSelectedIndex() == 0) {
             view.jbtnCargar.setVisible(false);
@@ -266,10 +287,10 @@ public class controlador implements ActionListener{
             view.jlblArchivoT.setVisible(true);//
             view.jlblArchivoI.setVisible(true);//
             view.jbtnCargar.setVisible(true);
-            
+
         }
     }
-    
+
     public void CargarT() {
         try {
             view.jlblTexto.setText(view.jtxtDatoTexto.getText());
@@ -277,12 +298,12 @@ public class controlador implements ActionListener{
             /*
             bytes = view.jlblTexto.getText().getBytes();
             mensaje = bytes.toString();
-            */            
-            mensaje =  view.jlblTexto.getText();
+             */
+            mensaje = view.jlblTexto.getText();
         } catch (Exception e) {
         }
     }
-    
+
     public void CargarArchivoT() {
         String contenido = "";
         try {
@@ -299,12 +320,12 @@ public class controlador implements ActionListener{
             view.jlblArchivoT.setText(new String(bytes));
             //view.jlblArchivoT.setText(bytes.toString());
             mensaje = bytes.toString();
-            
+
             //
-        } catch (Exception e) {            
-        }     
+        } catch (Exception e) {
+        }
     }
-    
+
     public String GuardarArchivoT(File archivo, String contenido) {
         String respuesta = "";
         try {
@@ -316,7 +337,7 @@ public class controlador implements ActionListener{
         }
         return respuesta;
     }
-    
+
     public void CargarArchivoI() {
         //byte[] bytesImg = new byte[1024*100];
         try {
@@ -329,7 +350,7 @@ public class controlador implements ActionListener{
         }
         //return bytesImg;
     }
-    
+
     public String GuardarArchivoI(File archivo, byte[] bytesImg) {
         String respuesta = "";
         try {
@@ -340,7 +361,7 @@ public class controlador implements ActionListener{
         }
         return respuesta;
     }
-    
+
     public void CargarArchivo() {
         if (seleccionado.showDialog(null, "Cargar Archivo") == JFileChooser.APPROVE_OPTION) {
             archivo = seleccionado.getSelectedFile();
@@ -357,91 +378,16 @@ public class controlador implements ActionListener{
             }
         }
     }
+
     //
-    public void OSi(){
+    public void OSi() {
         view.jlblMACO.setText(pcod.get(0).getMAC());
         view.jlblPCO.setText(pcod.get(0).getIP());
         view.jlblMACD.setText(pcod.get(1).getMAC());
         view.jlblPCD.setText(pcod.get(1).getIP());
         this.osi = new OSI(mensaje, pcod.get(0), pcod.get(1));
-        
+
         //osi.enviarMensaje();
         osi.mensaje2();
     }
-    
-    public void moverr() {
-        int x = view.jlblMove.getX();
-        int y = view.jlblMove.getY();
-        
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove.getLocation());
-        System.out.println(view.jlblMove1.getLocation());
-        System.out.println(view.jlblMove2.getLocation());
-        System.out.println(view.jlblMove3.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove3.getLocation());
-        System.out.println(view.jlblMove2.getLocation());
-        System.out.println(view.jlblMove5.getLocation());
-        System.out.println(view.jlblMove4.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove4.getLocation());
-        System.out.println(view.jlblMove5.getLocation());
-        System.out.println(view.jlblMove6.getLocation());
-        System.out.println(view.jlblMove7.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove4.getLocation());
-        System.out.println(view.jlblMove.getLocation());
-        System.out.println(view.jlblMove2.getLocation());
-        System.out.println(view.jlblMove3.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove7.getLocation());
-        System.out.println(view.jlblMove6.getLocation());
-        System.out.println(view.jlblMove9.getLocation());
-        System.out.println(view.jlblMove8.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove8.getLocation());
-        System.out.println(view.jlblMove9.getLocation());
-        System.out.println(view.jlblMove10.getLocation());
-        System.out.println(view.jlblMove11.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove11.getLocation());
-        System.out.println(view.jlblMove10.getLocation());
-        System.out.println(view.jlblMove13.getLocation());
-        //
-        System.out.println("--------------------------------------");
-        System.out.println(view.jlblMove12.getLocation());
-        System.out.println(view.jlblMove14.getLocation());
-        /*
-        while (view.jlblMove.getX() < 283) {            
-            view.jlblMove.setLocation(x+1, y);
-        }
-        */
-    }
-    /*
-    public void Move() {
-        int x, y;
-        while (true) {            
-            try {
-                Thread.sleep((10));
-                x = view.jlblMove.getX();
-                y = view.jlblMove.getY();
-                if (x < 283) {
-                    etiqueta.setLocation(etiqueta.getLocation().x + 10, etiqueta.getLocation().y);
-                    view.jpOSI.repaint();
-                }else {
-                    break;
-                }
-            } catch (Exception e) {
-            }
-            if (true) {
-                
-            }
-        }
-    }*/
 }
