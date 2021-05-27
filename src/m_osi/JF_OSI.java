@@ -102,6 +102,7 @@ public class JF_OSI extends javax.swing.JFrame {
         jlblMoveFO = new javax.swing.JLabel();
         jlblMoveRO = new javax.swing.JLabel();
         jpDiagrama = new javax.swing.JPanel();
+        jbntGuardar = new javax.swing.JButton();
         jmbOSI = new javax.swing.JMenuBar();
         jmPC = new javax.swing.JMenu();
         jmiIngresarPC = new javax.swing.JMenuItem();
@@ -478,6 +479,9 @@ public class JF_OSI extends javax.swing.JFrame {
             .addGap(0, 90, Short.MAX_VALUE)
         );
 
+        jbntGuardar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jbntGuardar.setText("Guardar Archivo");
+
         javax.swing.GroupLayout jpOSILayout = new javax.swing.GroupLayout(jpOSI);
         jpOSI.setLayout(jpOSILayout);
         jpOSILayout.setHorizontalGroup(
@@ -491,10 +495,16 @@ public class JF_OSI extends javax.swing.JFrame {
                             .addComponent(jlblPCO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jlblMACO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jlblIPCO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jlblMoveAO, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jlblMoveAD, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpOSILayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jlblMoveAO, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jlblMoveAD, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpOSILayout.createSequentialGroup()
+                                .addGap(413, 413, 413)
+                                .addComponent(jbntGuardar)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jpOSILayout.createSequentialGroup()
                         .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jlblPO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -557,7 +567,11 @@ public class JF_OSI extends javax.swing.JFrame {
             .addGroup(jpOSILayout.createSequentialGroup()
                 .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpOSILayout.createSequentialGroup()
-                        .addComponent(jlblIPCO)
+                        .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblIPCO)
+                            .addGroup(jpOSILayout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(jbntGuardar)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jlblMACO, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -733,6 +747,7 @@ public class JF_OSI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JButton jbntGuardar;
     public javax.swing.JButton jbtnAgregar;
     public javax.swing.JButton jbtnCargar;
     public javax.swing.JButton jbtnEnviar;

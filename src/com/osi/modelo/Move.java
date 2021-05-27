@@ -26,9 +26,9 @@ public class Move extends Thread {
         //osi.jpOSI.removeAll();
         int x, y;
 
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 15; i++) {
 
-            switch (i) {
+            switch (i) {/*
                 case 0:
                     osi.jlblMoveAO.setText(oSi.getAPDU());
                     osi.jlblMoveAO.setLocation(130, 167);
@@ -333,8 +333,12 @@ public class Move extends Thread {
                             }
                         }
                     }
-                    osi.jpDiagrama.removeAll();
-                    osi.jpDiagrama.setVisible(false);
+                    try {
+                        sleep(10000);
+                        osi.jpDiagrama.removeAll();
+                        osi.jpDiagrama.setVisible(false);
+                    } catch (Exception e) {
+                    }
                     break;
                 case 8:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
@@ -553,19 +557,19 @@ public class Move extends Thread {
                         }
                     }
                     osi.jlblMovePD.setText("");
-                    break;
+                    break;*/
                 case 14:
-                    osi.jlblMoveAD.setText(""/*oSi.getAPDU()*/);
+                    osi.jlblMoveAD.setText(oSi.getAPDU());
                     osi.jlblMoveAD.setLocation(700, 167);
                     while (true) {
                         try {
                             sleep(100);
                             x = osi.jlblMoveAD.getLocation().x;
                             y = osi.jlblMoveAD.getLocation().y;
-                            if (x > 442) {
+                            if (x > 544) {
                                 osi.jlblMoveAD.setLocation(x - 10, y);
                                 osi.jpOSI.repaint();
-                            } else if (y > 224) {
+                            } else if (y > 47) {
                                 osi.jlblMoveAD.setLocation(x, y - 10);
                                 osi.jpOSI.repaint();
                             } else {
@@ -574,19 +578,7 @@ public class Move extends Thread {
                         } catch (Exception e) {
                         }
                     }
-                    while (true) {
-                        try {
-                            sleep(100);
-                            x = osi.jlblMoveAD.getLocation().x;
-                            if (x < 700) {
-                                osi.jlblMoveAD.setLocation(x + 10, y);
-                                osi.jpOSI.repaint();
-                            } else {
-                                break;
-                            }
-                        } catch (Exception e) {
-                        }
-                    }
+                    osi.jbntGuardar.setVisible(true);
                     osi.jlblMoveAD.setText("");
                     break;
             }

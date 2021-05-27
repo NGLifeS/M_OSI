@@ -68,8 +68,9 @@ public class controlador implements ActionListener {
         //
         this.view.jmiEnviar.addActionListener(this);
         //
-        //Esto no es
         this.view.jbtnProbar.addActionListener(this);
+        //
+        this.view.jbntGuardar.addActionListener(this);
         //
         PC pc1 = new PC("82:BE:17:DE:E1:BC", "192.168.1.100");
         PC pc2 = new PC("E8:93:87:CA:DF:3E", "192.168.1.101");
@@ -165,6 +166,7 @@ public class controlador implements ActionListener {
                     view.jpDatos.setVisible(false);
                     view.jpOSI.setVisible(false);
                     view.jpDiagrama.setVisible(false);
+                    view.jbntGuardar.setVisible(false);
                     view.jpEnviar.setVisible(true);
                     view.jbtnProbar.setVisible(true);
                 } else {
@@ -207,6 +209,12 @@ public class controlador implements ActionListener {
             System.out.println(view.jlblED.getLocation());
             System.out.println(view.jlblFD.getLocation());
             //
+            System.out.println("Otro mas");
+            System.out.println(view.jbntGuardar.getLocation());
+        }
+
+        if (e.getSource() == view.jbntGuardar) {
+            GuardarArchivo();
         }
     }
 
@@ -316,12 +324,18 @@ public class controlador implements ActionListener {
         }
     }
 
-    public String GuardarArchivoT(File archivo, String contenido) {
+    public String GuardarArchivoT(File archivo, byte[] bytesTxt) {
         String respuesta = "";
         try {
             salida = new FileOutputStream(archivo);
-            byte[] bytesTxt = contenido.getBytes();
-            salida.write(bytesTxt);
+            //if (archivo.getName().endsWith("txt")) {
+                salida.write(bytesTxt);                
+            /*} else {
+                String t = new String(bytesTxt, StandardCharsets.UTF_8);
+                t = t + ".txt";
+                bytesTxt = t.getBytes();
+                salida.write(bytesTxt);
+            }*/
             respuesta = "Se guardo con exito el archivo";
         } catch (Exception e) {
         }
@@ -367,6 +381,17 @@ public class controlador implements ActionListener {
                         JOptionPane.showMessageDialog(null, "ESCOGA OTRO");
                     }
                 }
+            }
+        }
+    }
+
+    public void GuardarArchivo() {
+        if (seleccionado.showDialog(null, "Guardar Archivo") == JFileChooser.APPROVE_OPTION) {
+            archivo = seleccionado.getSelectedFile();
+            if (archivo.getName().endsWith("jpg") || archivo.getName().endsWith("png") || archivo.getName().endsWith("gif")) {
+                GuardarArchivoI(archivo, bytes);
+            } else {
+                GuardarArchivoT(archivo, bytes);
             }
         }
     }
