@@ -83,9 +83,9 @@
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
-                  <Component id="jpEscogerPC" pref="1135" max="32767" attributes="0"/>
-                  <EmptySpace min="0" pref="155" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="167" max="32767" attributes="0"/>
+                  <Component id="jpEscogerPC" pref="1163" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="166" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
@@ -93,9 +93,9 @@
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="128" max="32767" attributes="0"/>
-                  <Component id="jpEnviar" pref="1187" max="32767" attributes="0"/>
-                  <EmptySpace pref="129" max="32767" attributes="0"/>
+                  <EmptySpace pref="141" max="32767" attributes="0"/>
+                  <Component id="jpEnviar" pref="1215" max="32767" attributes="0"/>
+                  <EmptySpace pref="140" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -154,11 +154,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jlblOSI">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Sora\Desktop\model_osi.jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -396,7 +391,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="502" max="32767" attributes="0"/>
+                  <EmptySpace pref="268" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -574,7 +569,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="519" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jpDato" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -611,7 +606,7 @@
                   <Component id="jbtnTexto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="jpDato" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="433" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -778,9 +773,8 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jpOSI" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="144" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jlblEnviarDatos" alignment="1" min="-2" pref="147" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
@@ -789,6 +783,11 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="503" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jpOSI" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -799,9 +798,9 @@
                   <Component id="jlblEnviarDatos" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jbtnProbar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jpOSI" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jpOSI" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -847,10 +846,10 @@
                                   <Component id="jlblMACO" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jlblIPCO" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlblMoveAO" min="-2" pref="420" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlblMoveAD" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jlblMoveAO" min="-2" pref="263" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jlblMoveAD" min="-2" pref="257" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -863,58 +862,69 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jlblMoveFO" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jlblMoveFD" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlblMoveTO" min="-2" pref="257" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jlblMoveTD" min="-2" pref="257" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jlblMoveEO" pref="504" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                      <Component id="jlblMoveED" min="-2" pref="423" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jlblMoveRO" max="32767" attributes="0"/>
+                                          <Component id="jlblMoveSO" min="-2" pref="257" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="382" pref="382" max="-2" attributes="0"/>
+                                              <Component id="jlblMoveRD" pref="264" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="389" max="-2" attributes="0"/>
+                                              <Component id="jlblMoveSD" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jpDiagrama" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jlblMoveEO" pref="257" max="32767" attributes="0"/>
+                                          <Component id="jlblMoveFO" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jlblMoveED" min="-2" pref="258" max="-2" attributes="0"/>
+                                          <Component id="jlblMoveFD" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jlblMoveTO" min="-2" pref="423" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jlblMoveTD" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jlblMoveSO" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jlblMoveRO" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jlblMoveRD" max="32767" attributes="0"/>
-                                          <Component id="jlblMoveSD" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jlblMovePO" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jlblMovePD" min="-2" pref="470" max="-2" attributes="0"/>
+                                      <Component id="jlblMovePO" min="-2" pref="263" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="377" max="-2" attributes="0"/>
+                                      <Component id="jlblMovePD" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="jlblPD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="jlblSD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="jlblTD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="jlblMACD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="jlblPCD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Component id="jlblIPCD" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblAD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                                  <Component id="jlblRD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Component id="jlblPD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="jlblTD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Component id="jlblMACD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="jlblPCD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                          <Component id="jlblIPCD" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlblRD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jlblFD" min="-2" pref="119" max="-2" attributes="0"/>
+                                  <Component id="jlblED" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jlblAD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jlblFD" min="-2" pref="119" max="-2" attributes="0"/>
-                          <Component id="jlblED" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="jlblSD" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -936,8 +946,9 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jlblMoveAD" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
                                           <Component id="jlblAO" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="jlblAD" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
@@ -951,11 +962,11 @@
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jlblMoveSD" min="-2" pref="25" max="-2" attributes="0"/>
                                                   <Component id="jlblMoveSO" min="-2" pref="25" max="-2" attributes="0"/>
                                                   <Component id="jlblSD" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
+                                                  <Component id="jlblMoveSD" min="-2" pref="25" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jlblMoveTO" min="-2" pref="25" max="-2" attributes="0"/>
                                                   <Component id="jlblMoveTD" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
@@ -996,13 +1007,11 @@
                               <Component id="jlblMACD" min="-2" pref="17" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jlblPCD" min="-2" pref="17" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jlblAD" min="-2" pref="25" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jlblPD" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                                       <Component id="jlblTD" min="-2" pref="25" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       <Component id="jlblRD" min="-2" pref="25" max="-2" attributes="0"/>
@@ -1011,7 +1020,9 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="217" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jpDiagrama" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="147" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1233,6 +1244,24 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
+            <Container class="javax.swing.JPanel" name="jpDiagrama">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="897" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="90" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>

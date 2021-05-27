@@ -34,6 +34,7 @@ public class controlador implements ActionListener {
     //
     private JLabel etiqueta;
     //
+    private String nombre;
     private String mensaje;
     private FileInputStream entrada;
     private FileOutputStream salida;
@@ -122,7 +123,6 @@ public class controlador implements ActionListener {
         }
         //
         if (e.getSource() == view.jmiDatos) {
-            //
             if (pcod.size() == 2) {
                 view.jpPrincipal.setVisible(false);
                 view.jpIngresoPC.setVisible(false);
@@ -164,6 +164,7 @@ public class controlador implements ActionListener {
                     view.jpEscogerPC.setVisible(false);
                     view.jpDatos.setVisible(false);
                     view.jpOSI.setVisible(false);
+                    view.jpDiagrama.setVisible(false);
                     view.jpEnviar.setVisible(true);
                     view.jbtnProbar.setVisible(true);
                 } else {
@@ -188,6 +189,7 @@ public class controlador implements ActionListener {
             System.out.println(view.jlblMoveRO.getLocation());
             System.out.println(view.jlblMoveEO.getLocation());
             System.out.println(view.jlblMoveFO.getLocation());
+            System.out.println("//");
             System.out.println(view.jlblMoveAD.getLocation());
             System.out.println(view.jlblMovePD.getLocation());
             System.out.println(view.jlblMoveSD.getLocation());
@@ -204,7 +206,6 @@ public class controlador implements ActionListener {
             System.out.println(view.jlblED.getLocation());
             System.out.println(view.jlblFD.getLocation());
         }
-        //
     }
 
     public void agregarPC() {
@@ -236,8 +237,7 @@ public class controlador implements ActionListener {
         }
         return modelo;
     }
-
-    //
+    
     public void escogerPC() {
         try {
             int index = view.jtPCSe.getSelectedRow();
@@ -250,7 +250,7 @@ public class controlador implements ActionListener {
                 view.jlblIPDestino.setText(view.jtPCS.getValueAt(index, 2).toString());
             }
             pcod.clear();
-            //Esto ------------------------------------------------------------------------------------------------------------------------------
+            
             for (int i = 0; i < pcs.size(); i++) {
                 if (pcs.get(i).getMAC().equals(view.jlblMACOrigen.getText())) {
                     pcod.add(0, pcs.get(i));
@@ -266,8 +266,7 @@ public class controlador implements ActionListener {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una PC");
         }
     }
-
-    //
+    
     public void limpiarLblOSI() {
         view.jlblArchivoI.setIcon(null);
         view.jlblArchivoT.setText("");
@@ -279,13 +278,13 @@ public class controlador implements ActionListener {
             view.jbtnCargar.setVisible(false);
             view.jtxtDatoTexto.setVisible(true);
             view.jbtnTexto.setVisible(true);
-            view.jlblArchivoT.setVisible(true);//
+            view.jlblArchivoT.setVisible(true);
         }
         if (view.jcbTipoDato.getSelectedIndex() == 1) {
             view.jtxtDatoTexto.setVisible(false);
             view.jbtnTexto.setVisible(false);
-            view.jlblArchivoT.setVisible(true);//
-            view.jlblArchivoI.setVisible(true);//
+            view.jlblArchivoT.setVisible(true);
+            view.jlblArchivoI.setVisible(true);
             view.jbtnCargar.setVisible(true);
 
         }
@@ -295,11 +294,11 @@ public class controlador implements ActionListener {
         try {
             view.jlblTexto.setText(view.jtxtDatoTexto.getText());
             view.jtxtDatoTexto.setText("");
-            /*
+            
             bytes = view.jlblTexto.getText().getBytes();
             mensaje = bytes.toString();
-             */
-            mensaje = view.jlblTexto.getText();
+            
+            nombre = view.jlblTexto.getText();
         } catch (Exception e) {
         }
     }
@@ -308,20 +307,9 @@ public class controlador implements ActionListener {
         String contenido = "";
         try {
             entrada = new FileInputStream(archivo);
-            /*
-            int ascci;
-            while ((ascci = entrada.read()) != -1) {                
-                char caracter = (char)ascci;
-                contenido += caracter;
-            }
-            view.jlblArchivoT.setText(contenido);*/
-            //
             entrada.read(bytes);
             view.jlblArchivoT.setText(new String(bytes));
-            //view.jlblArchivoT.setText(bytes.toString());
             mensaje = bytes.toString();
-
-            //
         } catch (Exception e) {
         }
     }
@@ -368,9 +356,11 @@ public class controlador implements ActionListener {
             if (archivo.canRead()) {
                 if (archivo.getName().endsWith("txt")) {
                     CargarArchivoT();
+                    nombre = archivo.getName();
                 } else {
                     if (archivo.getName().endsWith("jpg") || archivo.getName().endsWith("png") || archivo.getName().endsWith("gif")) {
                         CargarArchivoI();
+                        nombre = archivo.getName();
                     } else {
                         JOptionPane.showMessageDialog(null, "ESCOGA OTRO");
                     }
@@ -378,16 +368,14 @@ public class controlador implements ActionListener {
             }
         }
     }
-
-    //
+    
     public void OSi() {
         view.jlblMACO.setText(pcod.get(0).getMAC());
         view.jlblPCO.setText(pcod.get(0).getIP());
         view.jlblMACD.setText(pcod.get(1).getMAC());
         view.jlblPCD.setText(pcod.get(1).getIP());
-        this.osi = new OSI(mensaje, pcod.get(0), pcod.get(1));
+        this.osi = new OSI(nombre, mensaje, pcod.get(0), pcod.get(1));
 
-        //osi.enviarMensaje();
-        osi.mensaje2();
+        osi.enviarMensaje();
     }
 }
