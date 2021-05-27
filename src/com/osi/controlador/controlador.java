@@ -182,6 +182,7 @@ public class controlador implements ActionListener {
             OSi();
             Move mover = new Move(view, this.osi);
             mover.start();
+            //Borrar esto
             System.out.println(view.jlblMoveAO.getLocation());
             System.out.println(view.jlblMovePO.getLocation());
             System.out.println(view.jlblMoveSO.getLocation());
@@ -205,6 +206,7 @@ public class controlador implements ActionListener {
             System.out.println(view.jlblRD.getLocation());
             System.out.println(view.jlblED.getLocation());
             System.out.println(view.jlblFD.getLocation());
+            //
         }
     }
 
@@ -237,7 +239,7 @@ public class controlador implements ActionListener {
         }
         return modelo;
     }
-    
+
     public void escogerPC() {
         try {
             int index = view.jtPCSe.getSelectedRow();
@@ -250,7 +252,7 @@ public class controlador implements ActionListener {
                 view.jlblIPDestino.setText(view.jtPCS.getValueAt(index, 2).toString());
             }
             pcod.clear();
-            
+
             for (int i = 0; i < pcs.size(); i++) {
                 if (pcs.get(i).getMAC().equals(view.jlblMACOrigen.getText())) {
                     pcod.add(0, pcs.get(i));
@@ -266,7 +268,7 @@ public class controlador implements ActionListener {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una PC");
         }
     }
-    
+
     public void limpiarLblOSI() {
         view.jlblArchivoI.setIcon(null);
         view.jlblArchivoT.setText("");
@@ -294,10 +296,10 @@ public class controlador implements ActionListener {
         try {
             view.jlblTexto.setText(view.jtxtDatoTexto.getText());
             view.jtxtDatoTexto.setText("");
-            
+
             bytes = view.jlblTexto.getText().getBytes();
             mensaje = bytes.toString();
-            
+
             nombre = view.jlblTexto.getText();
         } catch (Exception e) {
         }
@@ -368,7 +370,7 @@ public class controlador implements ActionListener {
             }
         }
     }
-    
+
     public void OSi() {
         view.jlblMACO.setText(pcod.get(0).getMAC());
         view.jlblPCO.setText(pcod.get(0).getIP());

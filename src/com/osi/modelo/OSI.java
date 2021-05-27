@@ -37,38 +37,55 @@ public class OSI {
     }
 
     public void enviarMensaje() {
-
+        //
         System.out.println("-----------------------------------");
         System.out.println("Capa de Aplicacion");
+        //
         APDU = nombre;
+        //
         System.out.println(APDU);
         System.out.println("-----------------------------------");
         System.out.println("Capa de Presentacion");
+        //
         PPDU = mensaje;
+        //
         System.out.println(PPDU);
         System.out.println("-----------------------------------");
         System.out.println("Capa de Sesion");
+        //
         SPDU = "SH" + "/" + PPDU;
+        //
         System.out.println(SPDU);
         System.out.println("-----------------------------------");
         System.out.println("Capa de Transporte");
+        //
         segmentacion(mensaje);
         for (int i = 0; i < segmento.size(); i++) {
             TPDU.add("TH" + "/" + segmento.get(i));
+            //
             System.out.println(TPDU.get(i));
+            //
         }
+        //
         System.out.println("-----------------------------------");
         System.out.println("Capa de Red");
+        //
         PAQUETE = pcOrigen.getIP() + "/" + pcDestino.getIP() + "/";
+        //
         System.out.println(PAQUETE);
         System.out.println("-----------------------------------");
         System.out.println("Capa de Enlace de Datos");
+        //
         TRAMA = pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE;
+        //
         System.out.println(TRAMA);
         System.out.println("-----------------------------------");
         System.out.println("Capa Fisica");
+        //
         BIT = textToBinary(TRAMA);
+        //
         System.out.println(BIT);
+        //
     }
 
     public String decimalToBinary(int decimal) {

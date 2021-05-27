@@ -29,7 +29,6 @@ public class Move extends Thread {
         for (int i = 0; i < 14; i++) {
 
             switch (i) {
-                /*
                 case 0:
                     osi.jlblMoveAO.setText(oSi.getAPDU());
                     osi.jlblMoveAO.setLocation(130, 167);
@@ -245,8 +244,8 @@ public class Move extends Thread {
                                 }
                             } catch (Exception e) {
                             }
-                            osi.jlblMoveEO.setText("");
                         }
+                        osi.jlblMoveEO.setText("");
                     }
                     break;
                 case 6:
@@ -277,69 +276,70 @@ public class Move extends Thread {
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         for (int k = 0; k < oSi.getBIT().length(); k++) {
                             try {
-                                sleep(1000);
+                                sleep(25);
                                 if (oSi.getBIT().charAt(k) == '0') {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg + 10, 64);
-                                }else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '1') {
+                                } else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                }else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }else if (oSi.getBIT().charAt(k-1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                }else if (oSi.getBIT().charAt(k-1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }else if (oSi.getBIT().charAt(k-1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == ' ') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }else if (oSi.getBIT().charAt(k-1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                }else if (oSi.getBIT().charAt(k-1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '0') {
+                                } else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }else if (oSi.getBIT().charAt(k-1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == ' ') {
+                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == ' ') {
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }else if (oSi.getBIT().charAt(k-1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                }else if (oSi.getBIT().charAt(k-1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k+1) == '0') {
+                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == ' ') {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }else if (oSi.getBIT().charAt(k-1) == '1' && oSi.getBIT().charAt(k) == '1' && k+1 == oSi.getBIT().length()) {
+                                } else if (oSi.getBIT().charAt(k - 1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                } else if (oSi.getBIT().charAt(k - 1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && k + 1 == oSi.getBIT().length()) {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                }else if (oSi.getBIT().charAt(k-1) == '0' && oSi.getBIT().charAt(k) == '1' && k+1 == oSi.getBIT().length()) {
+                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && k + 1 == oSi.getBIT().length()) {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
                                 }
                                 if (flag == 80) {
+                                    sleep(10000);
                                     osi.jpDiagrama.removeAll();
                                     osi.jpDiagrama.repaint();
-                                    flag = 0;
+                                    flag = -1;
                                     xg = 41;
                                 }
                                 xg += 10;
-                                flag ++;
+                                flag++;
                             } catch (Exception e) {
                             }
                         }
                     }
                     osi.jpDiagrama.removeAll();
                     osi.jpDiagrama.setVisible(false);
-                    break;*/
+                    break;
                 case 8:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         osi.jlblMoveFD.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
-                        osi.jlblMoveFD.setLocation(619, 509);
+                        osi.jlblMoveFD.setLocation(700, 515);
                         while (true) {
                             try {
                                 sleep(100);
@@ -361,7 +361,7 @@ public class Move extends Thread {
                             try {
                                 sleep(100);
                                 x = osi.jlblMoveFD.getLocation().x;
-                                if (x < 619) {
+                                if (x < 700) {
                                     osi.jlblMoveFD.setLocation(x + 10, y);
                                     osi.jpOSI.repaint();
                                 } else {
@@ -369,14 +369,14 @@ public class Move extends Thread {
                                 }
                             } catch (Exception e) {
                             }
-                            osi.jlblMoveFD.setText("");
                         }
+                        osi.jlblMoveFD.setText("");
                     }
                     break;
                 case 9:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         osi.jlblMoveED.setText(oSi.getPAQUETE() + oSi.getSegmento().get(j));
-                        osi.jlblMoveED.setLocation(619, 452);
+                        osi.jlblMoveED.setLocation(700, 458);
                         while (true) {
                             try {
 
@@ -399,7 +399,7 @@ public class Move extends Thread {
                             try {
                                 sleep(100);
                                 x = osi.jlblMoveED.getLocation().x;
-                                if (x < 619) {
+                                if (x < 700) {
                                     osi.jlblMoveED.setLocation(x + 10, y);
                                     osi.jpOSI.repaint();
                                 } else {
@@ -407,14 +407,14 @@ public class Move extends Thread {
                                 }
                             } catch (Exception e) {
                             }
-                            osi.jlblMoveED.setText("");
                         }
+                        osi.jlblMoveED.setText("");
                     }
                     break;
                 case 10:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         osi.jlblMoveRD.setText(oSi.getSegmento().get(j));
-                        osi.jlblMoveRD.setLocation(619, 395);
+                        osi.jlblMoveRD.setLocation(700, 398);
                         while (true) {
                             try {
                                 sleep(100);
@@ -436,7 +436,7 @@ public class Move extends Thread {
                             try {
                                 sleep(100);
                                 x = osi.jlblMoveRD.getLocation().x;
-                                if (x < 619) {
+                                if (x < 700) {
                                     osi.jlblMoveRD.setLocation(x + 10, y);
                                     osi.jpOSI.repaint();
                                 } else {
@@ -449,46 +449,44 @@ public class Move extends Thread {
                     }
                     break;
                 case 11:
-                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
-                        osi.jlblMoveTD.setText(oSi.getSPDU());
-                        osi.jlblMoveTD.setLocation(619, 338);
-                        while (true) {
-                            try {
-                                sleep(100);
-                                x = osi.jlblMoveTD.getLocation().x;
-                                y = osi.jlblMoveTD.getLocation().y;
-                                if (x > 442) {
-                                    osi.jlblMoveTD.setLocation(x - 10, y);
-                                    osi.jpOSI.repaint();
-                                } else if (y > 289) {
-                                    osi.jlblMoveTD.setLocation(x, y - 10);
-                                    osi.jpOSI.repaint();
-                                } else {
-                                    break;
-                                }
-                            } catch (Exception e) {
+                    osi.jlblMoveTD.setText(oSi.getSPDU());
+                    osi.jlblMoveTD.setLocation(700, 341);
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveTD.getLocation().x;
+                            y = osi.jlblMoveTD.getLocation().y;
+                            if (x > 442) {
+                                osi.jlblMoveTD.setLocation(x - 10, y);
+                                osi.jpOSI.repaint();
+                            } else if (y > 289) {
+                                osi.jlblMoveTD.setLocation(x, y - 10);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
                             }
+                        } catch (Exception e) {
                         }
-                        while (true) {
-                            try {
-                                sleep(100);
-                                x = osi.jlblMoveTD.getLocation().x;
-                                if (x < 619) {
-                                    osi.jlblMoveTD.setLocation(x + 10, y);
-                                    osi.jpOSI.repaint();
-                                } else {
-                                    break;
-                                }
-                            } catch (Exception e) {
-                            }
-                        }
-                        osi.jlblMoveTD.setText("");
                     }
+                    while (true) {
+                        try {
+                            sleep(100);
+                            x = osi.jlblMoveTD.getLocation().x;
+                            if (x < 700) {
+                                osi.jlblMoveTD.setLocation(x + 10, y);
+                                osi.jpOSI.repaint();
+                            } else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                    osi.jlblMoveTD.setText("");
                     break;
 
                 case 12:
                     osi.jlblMoveSD.setText(oSi.getPPDU());
-                    osi.jlblMoveSD.setLocation(619, 283);
+                    osi.jlblMoveSD.setLocation(700, 289);
                     while (true) {
                         try {
                             sleep(100);
@@ -510,7 +508,7 @@ public class Move extends Thread {
                         try {
                             sleep(100);
                             x = osi.jlblMoveSD.getLocation().x;
-                            if (x < 619) {
+                            if (x < 700) {
                                 osi.jlblMoveSD.setLocation(x + 10, y);
                                 osi.jpOSI.repaint();
                             } else {
@@ -523,7 +521,7 @@ public class Move extends Thread {
                     break;
                 case 13:
                     osi.jlblMovePD.setText(oSi.getAPDU());
-                    osi.jlblMovePD.setLocation(619, 224);
+                    osi.jlblMovePD.setLocation(700, 224);
                     while (true) {
                         try {
                             sleep(100);
@@ -545,7 +543,7 @@ public class Move extends Thread {
                         try {
                             sleep(100);
                             x = osi.jlblMovePD.getLocation().x;
-                            if (x < 619) {
+                            if (x < 700) {
                                 osi.jlblMovePD.setLocation(x + 10, y);
                                 osi.jpOSI.repaint();
                             } else {
@@ -558,7 +556,7 @@ public class Move extends Thread {
                     break;
                 case 14:
                     osi.jlblMoveAD.setText(""/*oSi.getAPDU()*/);
-                    osi.jlblMoveAD.setLocation(619, 167);
+                    osi.jlblMoveAD.setLocation(700, 167);
                     while (true) {
                         try {
                             sleep(100);
@@ -580,7 +578,7 @@ public class Move extends Thread {
                         try {
                             sleep(100);
                             x = osi.jlblMoveAD.getLocation().x;
-                            if (x < 619) {
+                            if (x < 700) {
                                 osi.jlblMoveAD.setLocation(x + 10, y);
                                 osi.jpOSI.repaint();
                             } else {
