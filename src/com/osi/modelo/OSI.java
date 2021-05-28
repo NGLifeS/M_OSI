@@ -17,8 +17,10 @@ public class OSI {
     private String ipDestino;
     private String macOrigen;
     private String macDestino;
-    private String APDU, PPDU, SPDU, PAQUETE, TRAMA, BIT;
+    private String APDU, PPDU, SPDU, BIT;
     private ArrayList<String> TPDU = new ArrayList<>();
+    private ArrayList<String> PAQUETE = new ArrayList<>();
+    private ArrayList<String> TRAMA = new ArrayList<>();
 
     public OSI() {
     }
@@ -61,28 +63,29 @@ public class OSI {
         //
         segmentacion(mensaje);
         for (int i = 0; i < segmento.size(); i++) {
-            TPDU.add("TH" + "/" + segmento.get(i));
+            TPDU.add(segmento.get(i));
             //
             System.out.println(TPDU.get(i));
             //
+            System.out.println("-----------------------------------");
+            System.out.println("Capa de Red");
+            //
+            PAQUETE.add(pcOrigen.getIP() + "/" + pcDestino.getIP() + "/"+TPDU.get(i));
+            System.out.println(PAQUETE.get(i));
+            //
+            System.out.println(PAQUETE);
+            System.out.println("-----------------------------------");
+            System.out.println("Capa de Enlace de Datos");
+            //
+            TRAMA.add(pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE.get(i));
+            System.out.println(TRAMA.get(i));
+            //
+            System.out.println(TRAMA);
+            System.out.println("-----------------------------------");
+            System.out.println("Capa Fisica");
+            //
+            BIT = ""+textToBinary(TRAMA.get(i));
         }
-        //
-        System.out.println("-----------------------------------");
-        System.out.println("Capa de Red");
-        //
-        PAQUETE = pcOrigen.getIP() + "/" + pcDestino.getIP() + "/";
-        //
-        System.out.println(PAQUETE);
-        System.out.println("-----------------------------------");
-        System.out.println("Capa de Enlace de Datos");
-        //
-        TRAMA = pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE;
-        //
-        System.out.println(TRAMA);
-        System.out.println("-----------------------------------");
-        System.out.println("Capa Fisica");
-        //
-        BIT = textToBinary(TRAMA);
         //
         System.out.println(BIT);
         //
@@ -123,16 +126,16 @@ public class OSI {
         //
         System.out.println("Segmentando mensaje ........");
         //
-        int partes = mensaje.length() / 5 + 1;
-        if (mensaje.length() % 5 == 0) {
+        int partes = SPDU.length() / 5 + 1;
+        if (SPDU.length() % 5 == 0) {
             partes -= 1;
         }
         int indiceMensaje = 0;
         for (int i = 0; i < partes; i++) {
             String parte = String.valueOf(i);
             int j = 0;
-            while (j < 5 && indiceMensaje < mensaje.length()) {
-                parte = parte + mensaje.charAt(indiceMensaje);
+            while (j < 5 && indiceMensaje < SPDU.length()) {
+                parte = parte + SPDU.charAt(indiceMensaje);
                 j++;
                 indiceMensaje++;
             }
@@ -202,14 +205,6 @@ public class OSI {
         return SPDU;
     }
 
-    public String getPAQUETE() {
-        return PAQUETE;
-    }
-
-    public String getTRAMA() {
-        return TRAMA;
-    }
-
     public String getBIT() {
         return BIT;
     }
@@ -217,4 +212,18 @@ public class OSI {
     public ArrayList<String> getTPDU() {
         return TPDU;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public ArrayList<String> getPAQUETE() {
+        return PAQUETE;
+    }
+
+    public ArrayList<String> getTRAMA() {
+        return TRAMA;
+    }
+    
+   
 }

@@ -175,7 +175,7 @@ public class Move extends Thread {
                     break;
                 case 4:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
-                        osi.jlblMoveRO.setText(oSi.getPAQUETE() + oSi.getSegmento().get(j));
+                        osi.jlblMoveRO.setText(oSi.getPAQUETE().get(j));
                         osi.jlblMoveRO.setLocation(130, 395);
                         while (true) {
                             try {
@@ -212,7 +212,7 @@ public class Move extends Thread {
                     break;
                 case 5:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
-                        osi.jlblMoveEO.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
+                        osi.jlblMoveEO.setText(oSi.getTRAMA().get(j));
                         osi.jlblMoveEO.setLocation(130, 452);
                         while (true) {
                             try {
@@ -269,11 +269,10 @@ public class Move extends Thread {
                     }
                     break;*/
                 case 7:
-                    int xg = 31;
+                    int xg = 35;
                     int flag = 0;
                     int b = 0;
                     String bit;
-                    for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         for (int k = 0; k < oSi.getBIT().length(); k++) {
                             try {
                                 sleep(25);
@@ -322,36 +321,41 @@ public class Move extends Thread {
                                 }
                                 if (flag == 0) {
                                     bit = "";
-                                    for (int l = b; l <= b+80; l++) {
-                                        bit = bit+oSi.getBIT().charAt(l);
+                                    if (b+80<=oSi.getBIT().length()) {
+                                        for (int l = b; l <= b+80; l++) {
+                                            bit = bit+oSi.getBIT().charAt(l);
+                                        }                                        
+                                    }else {
+                                        for (int l = b; l < oSi.getBIT().length(); l++) {
+                                            bit = bit+oSi.getBIT().charAt(l);
+                                        }
                                     }
                                     b += 81;
                                     osi.jlblBit.setText(bit);
                                 }
                                 if (flag == 80) {
                                     sleep(2500);
-                                    osi.jlblBit.setText(" ");
+                                    osi.jlblBit.setText("");
                                     osi.jpDiagrama.removeAll();
                                     osi.jpDiagrama.repaint();
                                     flag = -1;
-                                    xg = 31;
+                                    xg = 25;
                                 }
                                 xg += 10;
                                 flag++;
                             } catch (Exception e) {
                             }
                         }
-                    }
                     try {
-                        sleep(10000);
+                        sleep(2500);
+                        osi.jlblBit.setText("");
                         osi.jpDiagrama.removeAll();
-                        osi.jpDiagrama.setVisible(false);
                     } catch (Exception e) {
                     }
                     break;
                 case 8:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
-                        osi.jlblMoveFD.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
+                        osi.jlblMoveFD.setText(oSi.getTRAMA().get(j));
                         osi.jlblMoveFD.setLocation(700, 515);
                         while (true) {
                             try {
@@ -361,7 +365,7 @@ public class Move extends Thread {
                                 if (x > 442) {
                                     osi.jlblMoveFD.setLocation(x - 10, y);
                                     osi.jpOSI.repaint();
-                                } else if (y > 458) {
+                                } else if (y > 457) {
                                     osi.jlblMoveFD.setLocation(x, y - 10);
                                     osi.jpOSI.repaint();
                                 } else {
@@ -374,7 +378,7 @@ public class Move extends Thread {
                             try {
                                 sleep(100);
                                 x = osi.jlblMoveFD.getLocation().x;
-                                if (x < 700) {
+                                if (x < 693) {
                                     osi.jlblMoveFD.setLocation(x + 10, y);
                                     osi.jpOSI.repaint();
                                 } else {
@@ -388,7 +392,7 @@ public class Move extends Thread {
                     break;
                 case 9:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
-                        osi.jlblMoveED.setText(oSi.getPAQUETE() + oSi.getSegmento().get(j));
+                        osi.jlblMoveED.setText(oSi.getPAQUETE().get(j));
                         osi.jlblMoveED.setLocation(700, 458);
                         while (true) {
                             try {
@@ -575,7 +579,7 @@ public class Move extends Thread {
                             sleep(100);
                             x = osi.jlblMoveAD.getLocation().x;
                             y = osi.jlblMoveAD.getLocation().y;
-                            if (x > 544) {
+                            if (x > 537) {
                                 osi.jlblMoveAD.setLocation(x - 10, y);
                                 osi.jpOSI.repaint();
                             } else if (y > 47) {
