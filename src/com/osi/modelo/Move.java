@@ -27,7 +27,7 @@ public class Move extends Thread {
 
         for (int i = 0; i < 15; i++) {
 
-            switch (i) {/*
+            switch (i) {
                 case 0:
                     osi.jlblMoveAO.setText(oSi.getAPDU());
                     osi.jlblMoveAO.setLocation(130, 167);
@@ -209,7 +209,7 @@ public class Move extends Thread {
                         }
                         osi.jlblMoveRO.setText("");
                     }
-                    break;*/
+                    break;
                 case 5:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         osi.jlblMoveEO.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
