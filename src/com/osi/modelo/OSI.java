@@ -9,21 +9,11 @@ public class OSI {
     //
     private PC pcOrigen;
     private PC pcDestino;
-    private ArrayList<String> segmento;
     private String paquete;
     private String trama;
-    private ArrayList<String> segm;
-    private String ipOrigen;
-    private String ipDestino;
-    private String macOrigen;
-    private String macDestino;
+    //private ArrayList<String> segm;
     private String APDU, PPDU, SPDU, BIT;
-    private ArrayList<String> TPDU = new ArrayList<>();
-    private ArrayList<String> PAQUETE = new ArrayList<>();
-    private ArrayList<String> TRAMA = new ArrayList<>();
-
-    public OSI() {
-    }
+    private ArrayList<String> segmento, TPDU, PAQUETE, TRAMA;
 
     public OSI(String nombre, String mensaje, PC pcOrigen, PC pcDestino) {
         this.nombre = nombre;
@@ -31,64 +21,27 @@ public class OSI {
         this.pcOrigen = pcOrigen;
         this.pcDestino = pcDestino;
         this.segmento = new ArrayList<>();
-        this.segm = new ArrayList<>();
-        this.ipOrigen = " ";
-        this.ipDestino = " ";
-        this.macOrigen = " ";
-        this.macDestino = " ";
+        //this.segm = new ArrayList<>();
+        this.APDU = "";
+        this.PPDU = "";
+        this.SPDU = "";
+        this.BIT = "";
+        this.TPDU = new ArrayList<>();
+        this.PAQUETE = new ArrayList<>();
+        this.TRAMA = new ArrayList<>();
     }
 
     public void enviarMensaje() {
-        //
-        System.out.println("-----------------------------------");
-        System.out.println("Capa de Aplicacion");
-        //
         APDU = nombre;
-        //
-        System.out.println(APDU);
-        System.out.println("-----------------------------------");
-        System.out.println("Capa de Presentacion");
-        //
         PPDU = mensaje;
-        //
-        System.out.println(PPDU);
-        System.out.println("-----------------------------------");
-        System.out.println("Capa de Sesion");
-        //
         SPDU = "SH" + "/" + PPDU;
-        //
-        System.out.println(SPDU);
-        System.out.println("-----------------------------------");
-        System.out.println("Capa de Transporte");
-        //
         segmentacion(mensaje);
         for (int i = 0; i < segmento.size(); i++) {
             TPDU.add(segmento.get(i));
-            //
-            System.out.println(TPDU.get(i));
-            //
-            System.out.println("-----------------------------------");
-            System.out.println("Capa de Red");
-            //
             PAQUETE.add(pcOrigen.getIP() + "/" + pcDestino.getIP() + "/"+TPDU.get(i));
-            System.out.println(PAQUETE.get(i));
-            //
-            System.out.println(PAQUETE);
-            System.out.println("-----------------------------------");
-            System.out.println("Capa de Enlace de Datos");
-            //
             TRAMA.add(pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE.get(i));
-            System.out.println(TRAMA.get(i));
-            //
-            System.out.println(TRAMA);
-            System.out.println("-----------------------------------");
-            System.out.println("Capa Fisica");
-            //
             BIT = ""+textToBinary(TRAMA.get(i));
         }
-        //
-        System.out.println(BIT);
-        //
     }
 
     public String decimalToBinary(int decimal) {
@@ -121,11 +74,7 @@ public class OSI {
         return binaryText;
     }
 
-    //
     public void segmentacion(String mensaje) {
-        //
-        System.out.println("Segmentando mensaje ........");
-        //
         int partes = SPDU.length() / 5 + 1;
         if (SPDU.length() % 5 == 0) {
             partes -= 1;
@@ -140,13 +89,8 @@ public class OSI {
                 indiceMensaje++;
             }
             segmento.add(parte);
-            segm.add(parte);
+            //segm.add(parte);
         }
-        //
-        for (String mensajeString : segmento) {
-            System.out.println(mensajeString);
-        }
-        System.out.println("Mensaje segmentado correctamente");
     }
 
     public String getMensaje() {
@@ -173,25 +117,9 @@ public class OSI {
         return trama;
     }
 
-    public ArrayList<String> getSegm() {
+    /*public ArrayList<String> getSegm() {
         return segm;
-    }
-
-    public String getIpOrigen() {
-        return ipOrigen;
-    }
-
-    public String getIpDestino() {
-        return ipDestino;
-    }
-
-    public String getMacOrigen() {
-        return macOrigen;
-    }
-
-    public String getMacDestino() {
-        return macDestino;
-    }
+    }*/
 
     public String getAPDU() {
         return APDU;

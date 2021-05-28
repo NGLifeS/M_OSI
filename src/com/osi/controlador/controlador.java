@@ -180,33 +180,6 @@ public class controlador implements ActionListener {
             OSi();
             Move mover = new Move(view, this.osi);
             mover.start();
-            //Borrar esto
-            System.out.println(view.jlblMoveAO.getLocation());
-            System.out.println(view.jlblMovePO.getLocation());
-            System.out.println(view.jlblMoveSO.getLocation());
-            System.out.println(view.jlblMoveTO.getLocation());
-            System.out.println(view.jlblMoveRO.getLocation());
-            System.out.println(view.jlblMoveEO.getLocation());
-            System.out.println(view.jlblMoveFO.getLocation());
-            System.out.println("//");
-            System.out.println(view.jlblMoveAD.getLocation());
-            System.out.println(view.jlblMovePD.getLocation());
-            System.out.println(view.jlblMoveSD.getLocation());
-            System.out.println(view.jlblMoveTD.getLocation());
-            System.out.println(view.jlblMoveRD.getLocation());
-            System.out.println(view.jlblMoveED.getLocation());
-            System.out.println(view.jlblMoveFD.getLocation());
-            System.out.println("Otro");
-            System.out.println(view.jlblAD.getLocation());
-            System.out.println(view.jlblPD.getLocation());
-            System.out.println(view.jlblSD.getLocation());
-            System.out.println(view.jlblTD.getLocation());
-            System.out.println(view.jlblRD.getLocation());
-            System.out.println(view.jlblED.getLocation());
-            System.out.println(view.jlblFD.getLocation());
-            //
-            System.out.println("Otro mas");
-            System.out.println(view.jbntGuardar.getLocation());
         }
 
         if (e.getSource() == view.jbntGuardar) {
