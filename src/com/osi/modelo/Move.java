@@ -23,7 +23,6 @@ public class Move extends Thread {
 
     @Override
     public void run() {
-        //osi.jpOSI.removeAll();
         int x, y;
 
         for (int i = 0; i < 15; i++) {
@@ -210,7 +209,7 @@ public class Move extends Thread {
                         }
                         osi.jlblMoveRO.setText("");
                     }
-                    break;
+                    break;*/
                 case 5:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         osi.jlblMoveEO.setText(oSi.getTRAMA() + oSi.getSegmento().get(j));
@@ -247,7 +246,7 @@ public class Move extends Thread {
                         }
                         osi.jlblMoveEO.setText("");
                     }
-                    break;
+                    break;/*
                 case 6:
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         osi.jlblMoveFO.setText(oSi.getBIT());
@@ -268,11 +267,12 @@ public class Move extends Thread {
                         }
                         osi.jlblMoveFO.setText("");
                     }
-                    break;
+                    break;*/
                 case 7:
-                    osi.jpDiagrama.setVisible(true);
-                    int xg = 41;
+                    int xg = 31;
                     int flag = 0;
+                    int b = 0;
+                    String bit;
                     for (int j = 0; j < oSi.getSegmento().size(); j++) {
                         for (int k = 0; k < oSi.getBIT().length(); k++) {
                             try {
@@ -320,12 +320,21 @@ public class Move extends Thread {
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
                                     Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
                                 }
+                                if (flag == 0) {
+                                    bit = "";
+                                    for (int l = b; l <= b+80; l++) {
+                                        bit = bit+oSi.getBIT().charAt(l);
+                                    }
+                                    b += 81;
+                                    osi.jlblBit.setText(bit);
+                                }
                                 if (flag == 80) {
-                                    sleep(10000);
+                                    sleep(2500);
+                                    osi.jlblBit.setText(" ");
                                     osi.jpDiagrama.removeAll();
                                     osi.jpDiagrama.repaint();
                                     flag = -1;
-                                    xg = 41;
+                                    xg = 31;
                                 }
                                 xg += 10;
                                 flag++;
@@ -557,7 +566,7 @@ public class Move extends Thread {
                         }
                     }
                     osi.jlblMovePD.setText("");
-                    break;*/
+                    break;
                 case 14:
                     osi.jlblMoveAD.setText(oSi.getAPDU());
                     osi.jlblMoveAD.setLocation(700, 167);

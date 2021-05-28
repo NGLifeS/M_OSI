@@ -103,6 +103,7 @@ public class JF_OSI extends javax.swing.JFrame {
         jlblMoveRO = new javax.swing.JLabel();
         jpDiagrama = new javax.swing.JPanel();
         jbntGuardar = new javax.swing.JButton();
+        jlblBit = new javax.swing.JLabel();
         jmbOSI = new javax.swing.JMenuBar();
         jmPC = new javax.swing.JMenu();
         jmiIngresarPC = new javax.swing.JMenuItem();
@@ -482,6 +483,8 @@ public class JF_OSI extends javax.swing.JFrame {
         jbntGuardar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jbntGuardar.setText("Guardar Archivo");
 
+        jlblBit.setFont(new java.awt.Font("Dialog", 0, 19)); // NOI18N
+
         javax.swing.GroupLayout jpOSILayout = new javax.swing.GroupLayout(jpOSI);
         jpOSI.setLayout(jpOSILayout);
         jpOSILayout.setHorizontalGroup(
@@ -530,7 +533,6 @@ public class JF_OSI extends javax.swing.JFrame {
                                     .addGroup(jpOSILayout.createSequentialGroup()
                                         .addGap(389, 389, 389)
                                         .addComponent(jlblMoveSD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addComponent(jpDiagrama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jpOSILayout.createSequentialGroup()
                                 .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jlblMoveEO, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
@@ -542,7 +544,12 @@ public class JF_OSI extends javax.swing.JFrame {
                             .addGroup(jpOSILayout.createSequentialGroup()
                                 .addComponent(jlblMovePO, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(377, 377, 377)
-                                .addComponent(jlblMovePD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jlblMovePD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jpOSILayout.createSequentialGroup()
+                                .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jlblBit, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jpDiagrama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpOSILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -639,7 +646,9 @@ public class JF_OSI extends javax.swing.JFrame {
                             .addComponent(jlblMovePD, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpDiagrama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlblBit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpEnviarLayout = new javax.swing.GroupLayout(jpEnviar);
@@ -759,6 +768,7 @@ public class JF_OSI extends javax.swing.JFrame {
     public javax.swing.JLabel jlblAO;
     public javax.swing.JLabel jlblArchivoI;
     public javax.swing.JLabel jlblArchivoT;
+    public javax.swing.JLabel jlblBit;
     public javax.swing.JLabel jlblED;
     public javax.swing.JLabel jlblEO;
     private javax.swing.JLabel jlblEnviarDatos;

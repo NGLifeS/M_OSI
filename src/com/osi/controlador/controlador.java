@@ -14,7 +14,6 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import m_osi.JF_OSI;
@@ -31,8 +30,6 @@ public class controlador implements ActionListener {
     private ArrayList<PC> pcs;
     private ArrayList<PC> pcod;
     DefaultTableModel modelo = new DefaultTableModel();
-    //
-    private JLabel etiqueta;
     //
     private String nombre;
     private String mensaje;
@@ -165,7 +162,6 @@ public class controlador implements ActionListener {
                     view.jpEscogerPC.setVisible(false);
                     view.jpDatos.setVisible(false);
                     view.jpOSI.setVisible(false);
-                    view.jpDiagrama.setVisible(false);
                     view.jbntGuardar.setVisible(false);
                     view.jpEnviar.setVisible(true);
                     view.jbtnProbar.setVisible(true);
