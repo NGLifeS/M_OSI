@@ -12,21 +12,21 @@ import m_osi.JF_OSI;
  * @author Sora
  */
 public class Move extends Thread {
-
+    
     private JF_OSI osi;
     private OSI oSi;
-
+    
     public Move(JF_OSI osi, OSI oSi) {
         this.osi = osi;
         this.oSi = oSi;
     }
-
+    
     @Override
     public void run() {
         int x, y;
-
+        
         for (int i = 0; i < 14; i++) {
-
+            
             switch (i) {
                 case 0:
                     osi.jlblMoveAO.setText(oSi.getAPDU());
@@ -48,7 +48,7 @@ public class Move extends Thread {
                         } catch (Exception e) {
                         }
                     }
-
+                    
                     while (true) {
                         try {
                             sleep(100);
@@ -100,37 +100,39 @@ public class Move extends Thread {
                     osi.jlblMovePO.setText("");
                     break;
                 case 2:
-                    osi.jlblMoveSO.setText(oSi.getSPDU());
-                    osi.jlblMoveSO.setLocation(130, 283);
-                    while (true) {
-                        try {
-                            sleep(100);
-                            x = osi.jlblMoveSO.getLocation().x;
-                            y = osi.jlblMoveSO.getLocation().y;
-                            if (x < 307) {
-                                osi.jlblMoveSO.setLocation(x + 10, y);
-                                osi.jpOSI.repaint();
-                            } else if (y < 338) {
-                                osi.jlblMoveSO.setLocation(x, y + 10);
-                                osi.jpOSI.repaint();
-                            } else {
-                                break;
+                    for (int j = 0; j < 2; j++) {
+                        osi.jlblMoveSO.setText(oSi.getSPDU().get(j));
+                        osi.jlblMoveSO.setLocation(130, 283);
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveSO.getLocation().x;
+                                y = osi.jlblMoveSO.getLocation().y;
+                                if (x < 307) {
+                                    osi.jlblMoveSO.setLocation(x + 10, y);
+                                    osi.jpOSI.repaint();
+                                } else if (y < 338) {
+                                    osi.jlblMoveSO.setLocation(x, y + 10);
+                                    osi.jpOSI.repaint();
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
                             }
-                        } catch (Exception e) {
                         }
-                    }
-                    while (true) {
-                        try {
-                            sleep(100);
-                            x = osi.jlblMoveSO.getLocation().x;
-                            if (x > 130) {
-                                osi.jlblMoveSO.setLocation(x - 10, y);
-                                osi.jpOSI.repaint();
-
-                            } else {
-                                break;
+                        while (true) {
+                            try {
+                                sleep(100);
+                                x = osi.jlblMoveSO.getLocation().x;
+                                if (x > 130) {
+                                    osi.jlblMoveSO.setLocation(x - 10, y);
+                                    osi.jpOSI.repaint();
+                                    
+                                } else {
+                                    break;
+                                }
+                            } catch (Exception e) {
                             }
-                        } catch (Exception e) {
                         }
                     }
                     osi.jlblMoveSO.setText("");
@@ -156,7 +158,7 @@ public class Move extends Thread {
                             } catch (Exception e) {
                             }
                         }
-
+                        
                         while (true) {
                             try {
                                 sleep(100);
@@ -375,7 +377,7 @@ public class Move extends Thread {
                         osi.jlblMoveED.setLocation(620, 458);
                         while (true) {
                             try {
-
+                                
                                 sleep(100);
                                 x = osi.jlblMoveED.getLocation().x;
                                 y = osi.jlblMoveED.getLocation().y;
@@ -445,7 +447,7 @@ public class Move extends Thread {
                     }
                     break;
                 case 10:
-                    osi.jlblMoveTD.setText(oSi.getSPDU());
+                    osi.jlblMoveTD.setText(oSi.getSPDU().get(1));
                     osi.jlblMoveTD.setLocation(590, 341);
                     while (true) {
                         try {

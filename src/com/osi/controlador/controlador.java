@@ -384,9 +384,9 @@ public class controlador implements ActionListener {
         if (seleccionado.showDialog(null, "Guardar Archivo") == JFileChooser.APPROVE_OPTION) {
             archivo = seleccionado.getSelectedFile();
             if (archivo.getName().endsWith("jpg") || archivo.getName().endsWith("png") || archivo.getName().endsWith("gif")) {
-                GuardarArchivoI(archivo, bytes);
+                JOptionPane.showMessageDialog(null, GuardarArchivoI(archivo, bytes));
             } else {
-                GuardarArchivoT(archivo, bytes);
+                JOptionPane.showMessageDialog(null, GuardarArchivoT(archivo, bytes));
             }
         }
     }
@@ -396,7 +396,13 @@ public class controlador implements ActionListener {
         view.jlblPCO.setText(pcod.get(0).getIP());
         view.jlblMACD.setText(pcod.get(1).getMAC());
         view.jlblPCD.setText(pcod.get(1).getIP());
-        this.osi = new OSI(nombre, mensaje, pcod.get(0), pcod.get(1));
+        String pcnd = "";
+        for (int i = 0; i < pcs.size(); i++) {
+            if (pcod.get(1).getMAC().equals(pcs.get(i).getMAC())) {
+                pcnd = pcnd + (i + 1);
+            }
+        }
+        this.osi = new OSI(nombre, mensaje, pcod.get(0), pcod.get(1), pcnd);
 
         osi.enviarMensaje();
     }
