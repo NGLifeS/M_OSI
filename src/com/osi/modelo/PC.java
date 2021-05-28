@@ -1,9 +1,12 @@
 package com.osi.modelo;
 
 public class PC {
+
+    //VARIABLES DE PC
     private String IP;
     private String MAC;
 
+    //CONSTRUCTORES
     public PC() {
     }
 
@@ -12,6 +15,7 @@ public class PC {
         this.IP = IP;
     }
 
+    //GETTER
     public String getIP() {
         return IP;
     }

@@ -24,6 +24,7 @@ import m_osi.JF_OSI;
  */
 public class controlador implements ActionListener {
 
+    //CREACION DE VARIABLES
     private JF_OSI view;
     private PC pc;
     private OSI osi;
@@ -39,15 +40,19 @@ public class controlador implements ActionListener {
     private JFileChooser seleccionado;
     byte[] bytes;
 
+    //CREACION DE CONSTRUCTOR
     public controlador(JF_OSI view) {
+        //CREACION DEL FRAME
         this.view = view;
+        //INICIAR FRAME CON LO NECESESARIO
         iniciar();
+        //INICIALIZACION DE VARIABLES
         this.pcs = new ArrayList<>();
         this.pcod = new ArrayList<>();
         this.mensaje = "";
         this.seleccionado = new JFileChooser();
         this.bytes = new byte[1024 * 100];
-        //
+        //CREACION DE ACCIONES CLICK
         this.view.jmiIngresarPC.addActionListener(this);
         this.view.jbtnEnviar.addActionListener(this);
         //
@@ -68,14 +73,14 @@ public class controlador implements ActionListener {
         this.view.jbtnProbar.addActionListener(this);
         //
         this.view.jbntGuardar.addActionListener(this);
-        //
+        //CREACION DE PCS DE INICIO
         PC pc1 = new PC("82:BE:17:DE:E1:BC", "192.168.1.100");
         PC pc2 = new PC("E8:93:87:CA:DF:3E", "192.168.1.101");
         PC pc3 = new PC("F1:66:BB:39:BE:B2", "192.168.1.102");
+        //AGREGAR PC A UN ARRAY
         pcs.add(pc1);
         pcs.add(pc2);
         pcs.add(pc3);
-        //
     }
 
     public void iniciar() {
@@ -188,11 +193,16 @@ public class controlador implements ActionListener {
     }
 
     public void agregarPC() {
+        //LEER Y GUARDAR DEL LABEL MAC E IP
         String MAC = view.jtxtMAC.getText();
         String IP = view.jtxtIP.getText();
+        //CREACION DE PC Y GUARDARLO EN EL ARRAY
         pc = new PC(IP, MAC);
         pcs.add(pc);
+        //AGREGAR PC A LA TABLA
         listarPC();
+        //LIMPIAR LABEL DE MAC E IP
+        limpiar();
     }
 
     public void limpiarByte() {
@@ -200,48 +210,64 @@ public class controlador implements ActionListener {
     }
 
     public void limpiar() {
+        //LIMPIAR LABEL DE MAC E IP DE INGRESO DE PC
         view.jtxtMAC.setText("");
         view.jtxtIP.setText("");
     }
 
     public DefaultTableModel listarPC() {
+        //CREACION DE UN MODELO TIPO TABLA CON LOS DATOS DE LA TABLA
         modelo = (DefaultTableModel) view.jtPCS.getModel();
+        //CREACION DE UN OBJETO DONDE GUARDAR LAS PCS
         String[] objeto = new String[3];
+        //LIMPIAMOS LA TABLA
         modelo.getDataVector().removeAllElements();
+        //AGREGAMOS DATOS DE LAS PCS A LA TABLA
         for (int i = 0; i < pcs.size(); i++) {
             objeto[0] = "PC " + (i + 1);
             objeto[1] = pcs.get(i).getMAC();
             objeto[2] = pcs.get(i).getIP();
+            //AGREGAR FILAS A LA TABLA
             modelo.addRow(objeto);
         }
+        //RETORNAR TABLA
         return modelo;
     }
 
     public void escogerPC() {
         try {
+            //INDICE DE LA FILA SELECCIONADA
             int index = view.jtPCSe.getSelectedRow();
+            //SI EL PC DE ORIGEN ESTA VACION AGREGAMOS EL PRIMERO A ESTE
             if (view.jlblMACOrigen.getText().equals("")) {
                 view.jlblMACOrigen.setText(view.jtPCS.getValueAt(index, 1).toString());
                 view.jlblIPOrigen.setText(view.jtPCS.getValueAt(index, 2).toString());
             }
+            //SI EL PC DE ORIGEN ESTA LLENO Y LA MAC DE ORIGEN ES DISTINTA A LA QUE ESTAMOS ESCOGIENDO, AGREGAMOS PC DE DESTINO
             if (view.jlblMACOrigen.getText() != view.jtPCS.getValueAt(index, 1) && view.jlblMACDestino.getText().equals("")) {
                 view.jlblMACDestino.setText(view.jtPCS.getValueAt(index, 1).toString());
                 view.jlblIPDestino.setText(view.jtPCS.getValueAt(index, 2).toString());
             }
+            //ARRAY DONDE GUARDO PC DE ORIGEN Y DESTINO, LA LIMPIAMOS
             pcod.clear();
-
+            //RECORREMOS ARRAY DONDE ESTAN TODAS LAS PCS
             for (int i = 0; i < pcs.size(); i++) {
+                //COMPARAMOS EL LABEL DE LA MAC DE ORIGEN CON LA MAC DE CADA UNA DE LAS PCS
                 if (pcs.get(i).getMAC().equals(view.jlblMACOrigen.getText())) {
+                    //GUARDAMOS PC DE ORIGEN QUE COINCIDE EN INDICE 0
                     pcod.add(0, pcs.get(i));
                 }
             }
-
+            //RECORREMOS ARRAY DONDE ESTAN TODAS LAS PCS
             for (int i = 0; i < pcs.size(); i++) {
+                //COMPARAMOS EL LABEL DE LA MAC DE ORIGEN CON LA MAC DE CADA UNA DE LAS PCS
                 if (pcs.get(i).getMAC().equals(view.jlblMACDestino.getText())) {
+                    //GUARDAMOS PC DE DESTINO QUE COINCIDE EN INDICE 1
                     pcod.add(1, pcs.get(i));
                 }
             }
         } catch (Exception e) {
+            //EN CASO DE DARLE CLICK A BOTON "+" PARA AGREGAR Y NO HEMOS SELECCIONADO NINGUNA FILA
             JOptionPane.showMessageDialog(null, "Debe seleccionar una PC");
         }
     }
@@ -252,13 +278,16 @@ public class controlador implements ActionListener {
         view.jlblTexto.setText("");
     }
 
+    //ESCOGER TIPO DE DATO A ENVIAR Y MOSTRAR PANELES QUE HAGAN FALTA
     public void TipoDato() {
+        //SI ES 0 ES INGRESAR UN TEXTO
         if (view.jcbTipoDato.getSelectedIndex() == 0) {
             view.jbtnCargar.setVisible(false);
             view.jtxtDatoTexto.setVisible(true);
             view.jbtnTexto.setVisible(true);
             view.jlblArchivoT.setVisible(true);
         }
+        //SI ES 1 ES INGRESAR UN ARCHIVO
         if (view.jcbTipoDato.getSelectedIndex() == 1) {
             view.jtxtDatoTexto.setVisible(false);
             view.jbtnTexto.setVisible(false);
@@ -269,6 +298,7 @@ public class controlador implements ActionListener {
         }
     }
 
+    //GUARGADO DE TEXTO INGRESADO
     public void CargarT() {
         try {
             view.jlblTexto.setText(view.jtxtDatoTexto.getText());
@@ -282,8 +312,8 @@ public class controlador implements ActionListener {
         }
     }
 
+    //GUARDADO DE ARCHIVO DE TEXTO
     public void CargarArchivoT() {
-        String contenido = "";
         try {
             entrada = new FileInputStream(archivo);
             entrada.read(bytes);
@@ -293,24 +323,19 @@ public class controlador implements ActionListener {
         }
     }
 
+    //DESCARGAR ARCHIVO DE TEXTO O TEXTO INGRESADO
     public String GuardarArchivoT(File archivo, byte[] bytesTxt) {
         String respuesta = "";
         try {
             salida = new FileOutputStream(archivo);
-            //if (archivo.getName().endsWith("txt")) {
-                salida.write(bytesTxt);                
-            /*} else {
-                String t = new String(bytesTxt, StandardCharsets.UTF_8);
-                t = t + ".txt";
-                bytesTxt = t.getBytes();
-                salida.write(bytesTxt);
-            }*/
+            salida.write(bytesTxt);
             respuesta = "Se guardo con exito el archivo";
         } catch (Exception e) {
         }
         return respuesta;
     }
 
+    //GUARDADO DE ARCHIVO DE IMAGEN
     public void CargarArchivoI() {
         //byte[] bytesImg = new byte[1024*100];
         try {
@@ -324,6 +349,7 @@ public class controlador implements ActionListener {
         //return bytesImg;
     }
 
+    //DESCARGAR ARCHIVO DE IMAGEN
     public String GuardarArchivoI(File archivo, byte[] bytesImg) {
         String respuesta = "";
         try {

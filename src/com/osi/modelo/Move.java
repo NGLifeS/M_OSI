@@ -252,79 +252,79 @@ public class Move extends Thread {
                     int flag = 0;
                     int b = 0;
                     String bit;
-                        for (int k = 0; k < oSi.getBIT().length(); k++) {
-                            try {
-                                sleep(25);
-                                if (oSi.getBIT().charAt(k) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg + 10, 64);
-                                } else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                } else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == ' ') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == ' ') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                } else if (oSi.getBIT().charAt(k - 1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                } else if (oSi.getBIT().charAt(k - 1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && k + 1 == oSi.getBIT().length()) {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && k + 1 == oSi.getBIT().length()) {
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
-                                    Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
-                                }
-                                if (flag == 0) {
-                                    bit = "";
-                                    if (b+80<=oSi.getBIT().length()) {
-                                        for (int l = b; l <= b+80; l++) {
-                                            bit = bit+oSi.getBIT().charAt(l);
-                                        }                                        
-                                    }else {
-                                        for (int l = b; l < oSi.getBIT().length(); l++) {
-                                            bit = bit+oSi.getBIT().charAt(l);
-                                        }
-                                    }
-                                    b += 81;
-                                    osi.jlblBit.setText(bit);
-                                }
-                                if (flag == 80) {
-                                    sleep(2500);
-                                    osi.jlblBit.setText("");
-                                    osi.jpDiagrama.removeAll();
-                                    osi.jpDiagrama.repaint();
-                                    flag = -1;
-                                    xg = 25;
-                                }
-                                xg += 10;
-                                flag++;
-                            } catch (Exception e) {
+                    for (int k = 0; k < oSi.getBIT().length(); k++) {
+                        try {
+                            sleep(25);
+                            if (oSi.getBIT().charAt(k) == '0') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg + 10, 64);
+                            } else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                            } else if (k == 0 && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                            } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                            } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                            } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == ' ') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                            } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                            } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                            } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == ' ') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                            } else if (oSi.getBIT().charAt(k - 1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '1') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                            } else if (oSi.getBIT().charAt(k - 1) == ' ' && oSi.getBIT().charAt(k) == '1' && oSi.getBIT().charAt(k + 1) == '0') {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
+                            } else if (oSi.getBIT().charAt(k - 1) == '1' && oSi.getBIT().charAt(k) == '1' && k + 1 == oSi.getBIT().length()) {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                            } else if (oSi.getBIT().charAt(k - 1) == '0' && oSi.getBIT().charAt(k) == '1' && k + 1 == oSi.getBIT().length()) {
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 64, xg, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg, 0, xg + 10, 0);
+                                Grafic.Linea(osi.jpDiagrama.getGraphics(), xg + 10, 0, xg + 10, 64);
                             }
+                            if (flag == 0) {
+                                bit = "";
+                                if (b + 80 <= oSi.getBIT().length()) {
+                                    for (int l = b; l <= b + 80; l++) {
+                                        bit = bit + oSi.getBIT().charAt(l);
+                                    }
+                                } else {
+                                    for (int l = b; l < oSi.getBIT().length(); l++) {
+                                        bit = bit + oSi.getBIT().charAt(l);
+                                    }
+                                }
+                                b += 81;
+                                osi.jlblBit.setText(bit);
+                            }
+                            if (flag == 80) {
+                                sleep(2500);
+                                osi.jlblBit.setText("");
+                                osi.jpDiagrama.removeAll();
+                                osi.jpDiagrama.repaint();
+                                flag = -1;
+                                xg = 25;
+                            }
+                            xg += 10;
+                            flag++;
+                        } catch (Exception e) {
                         }
+                    }
                     try {
                         sleep(2500);
                         osi.jlblBit.setText("");

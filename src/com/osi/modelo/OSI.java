@@ -38,12 +38,13 @@ public class OSI {
         segmentacion(mensaje);
         for (int i = 0; i < segmento.size(); i++) {
             TPDU.add(segmento.get(i));
-            PAQUETE.add(pcOrigen.getIP() + "/" + pcDestino.getIP() + "/"+TPDU.get(i));
+            PAQUETE.add(pcOrigen.getIP() + "/" + pcDestino.getIP() + "/" + TPDU.get(i));
             TRAMA.add(pcOrigen.getMAC() + "/" + pcDestino.getMAC() + "/" + PAQUETE.get(i));
-            BIT = ""+textToBinary(TRAMA.get(i));
+            BIT = "" + textToBinary(TRAMA.get(i));
         }
     }
 
+    //CONVERSIR DECIMAL A BINARIO
     public String decimalToBinary(int decimal) {
         if (decimal <= 0) {
             return "0";
@@ -57,6 +58,7 @@ public class OSI {
         return binary;
     }
 
+    //CONVERTIR TEXTO A BINARIO
     public String textToBinary(String mensaje) {
         String binaryText = "";
         for (int i = 0; i < mensaje.length(); i++) {
@@ -120,7 +122,6 @@ public class OSI {
     /*public ArrayList<String> getSegm() {
         return segm;
     }*/
-
     public String getAPDU() {
         return APDU;
     }
@@ -152,6 +153,5 @@ public class OSI {
     public ArrayList<String> getTRAMA() {
         return TRAMA;
     }
-    
-   
+
 }
