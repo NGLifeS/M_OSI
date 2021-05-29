@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -133,8 +135,6 @@ public class controlador implements ActionListener {
                 view.jpEnviar.setVisible(false);
                 view.jbtnCargar.setVisible(false);
                 limpiarLblOSI();
-                view.jlblArchivoT.setVisible(false);
-                view.jlblArchivoI.setVisible(false);
                 view.jpDatos.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Necesita escoger PCs");
@@ -197,12 +197,37 @@ public class controlador implements ActionListener {
         String MAC = view.jtxtMAC.getText();
         String IP = view.jtxtIP.getText();
         //CREACION DE PC Y GUARDARLO EN EL ARRAY
-        pc = new PC(IP, MAC);
-        pcs.add(pc);
-        //AGREGAR PC A LA TABLA
-        listarPC();
-        //LIMPIAR LABEL DE MAC E IP
-        limpiar();
+        if (isValid(MAC, IP)) {
+            pc = new PC(MAC, IP);
+            pcs.add(pc);
+            //AGREGAR PC A LA TABLA
+            listarPC();
+            //LIMPIAR LABEL DE MAC E IP
+            limpiar();            
+        } else {
+            JOptionPane.showMessageDialog(null, "Direccion incorrecta");
+        }
+    }
+    
+    public boolean isValid(String MAC, String IP) {
+        String MAC_REGEX = "^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$";
+        String IPV4_REGEX =  "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\." +
+                             "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\." +
+                             "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\." +
+                             "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
+        Pattern MAC_PATTERN = Pattern.compile(MAC_REGEX);
+        Pattern IPV4_PATTERN = Pattern.compile(IPV4_REGEX);
+        
+        if (MAC == null || IP == null) {
+            return false;
+        }
+        Matcher matcherMAC = MAC_PATTERN.matcher(MAC);
+        Matcher matcherIP = IPV4_PATTERN.matcher(IP);
+        if (matcherMAC.matches() == true && matcherIP.matches() == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void limpiarByte() {
@@ -273,9 +298,8 @@ public class controlador implements ActionListener {
     }
 
     public void limpiarLblOSI() {
-        view.jlblArchivoI.setIcon(null);
-        view.jlblArchivoT.setText("");
-        view.jlblTexto.setText("");
+        view.jlblMostrar.setIcon(null);
+        view.jlblMostrar.setText("");
     }
 
     //ESCOGER TIPO DE DATO A ENVIAR Y MOSTRAR PANELES QUE HAGAN FALTA
@@ -285,14 +309,11 @@ public class controlador implements ActionListener {
             view.jbtnCargar.setVisible(false);
             view.jtxtDatoTexto.setVisible(true);
             view.jbtnTexto.setVisible(true);
-            view.jlblArchivoT.setVisible(true);
         }
         //SI ES 1 ES INGRESAR UN ARCHIVO
         if (view.jcbTipoDato.getSelectedIndex() == 1) {
             view.jtxtDatoTexto.setVisible(false);
             view.jbtnTexto.setVisible(false);
-            view.jlblArchivoT.setVisible(true);
-            view.jlblArchivoI.setVisible(true);
             view.jbtnCargar.setVisible(true);
 
         }
@@ -301,13 +322,13 @@ public class controlador implements ActionListener {
     //GUARGADO DE TEXTO INGRESADO
     public void CargarT() {
         try {
-            view.jlblTexto.setText(view.jtxtDatoTexto.getText());
+            view.jlblMostrar.setText(view.jtxtDatoTexto.getText());
             view.jtxtDatoTexto.setText("");
 
-            bytes = view.jlblTexto.getText().getBytes();
+            bytes = view.jlblMostrar.getText().getBytes();
             mensaje = bytes.toString();
 
-            nombre = view.jlblTexto.getText();
+            nombre = view.jlblMostrar.getText();
         } catch (Exception e) {
         }
     }
@@ -317,7 +338,7 @@ public class controlador implements ActionListener {
         try {
             entrada = new FileInputStream(archivo);
             entrada.read(bytes);
-            view.jlblArchivoT.setText(new String(bytes));
+            view.jlblMostrar.setText(new String(bytes));
             mensaje = bytes.toString();
         } catch (Exception e) {
         }
@@ -341,7 +362,7 @@ public class controlador implements ActionListener {
         try {
             entrada = new FileInputStream(archivo);
             entrada.read(bytes);
-            view.jlblArchivoI.setIcon(new ImageIcon(bytes));
+            view.jlblMostrar.setIcon(new ImageIcon(bytes));
             //view.jlblArchivoI.setText(bytes.toString());
             mensaje = bytes.toString();
         } catch (Exception e) {

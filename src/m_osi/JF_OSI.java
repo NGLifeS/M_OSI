@@ -59,10 +59,7 @@ public class JF_OSI extends javax.swing.JFrame {
         jbtnCargar = new javax.swing.JButton();
         jtxtDatoTexto = new javax.swing.JTextField();
         jbtnTexto = new javax.swing.JButton();
-        jpDato = new javax.swing.JPanel();
-        jlblArchivoT = new javax.swing.JLabel();
-        jlblArchivoI = new javax.swing.JLabel();
-        jlblTexto = new javax.swing.JLabel();
+        jlblMostrar = new javax.swing.JLabel();
         jpEnviar = new javax.swing.JPanel();
         jlblEnviarDatos = new javax.swing.JLabel();
         jbtnProbar = new javax.swing.JButton();
@@ -115,21 +112,24 @@ public class JF_OSI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jlblOSI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblOSI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/model_osi.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
         jpPrincipal.setLayout(jpPrincipalLayout);
         jpPrincipalLayout.setHorizontalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPrincipalLayout.createSequentialGroup()
-                .addContainerGap(617, Short.MAX_VALUE)
-                .addComponent(jlblOSI)
-                .addGap(579, 579, 579))
+            .addGroup(jpPrincipalLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jlblOSI, javax.swing.GroupLayout.PREFERRED_SIZE, 1378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jpPrincipalLayout.setVerticalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addGap(284, 284, 284)
-                .addComponent(jlblOSI)
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addGap(74, 74, 74)
+                .addComponent(jlblOSI, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         jlblIngresarPC.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -218,7 +218,7 @@ public class JF_OSI extends javax.swing.JFrame {
                     .addComponent(jbtnEnviar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnLimpiar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
                 .addGap(54, 54, 54))
         );
 
@@ -320,7 +320,7 @@ public class JF_OSI extends javax.swing.JFrame {
                     .addGroup(jpEscogerPCLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jbtnAgregar)))
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(384, Short.MAX_VALUE))
         );
 
         jpDatos.setPreferredSize(new java.awt.Dimension(400, 283));
@@ -363,53 +363,31 @@ public class JF_OSI extends javax.swing.JFrame {
         jbtnTexto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jbtnTexto.setText("Cargar");
 
-        jlblArchivoT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        jlblArchivoI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        jlblTexto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout jpDatoLayout = new javax.swing.GroupLayout(jpDato);
-        jpDato.setLayout(jpDatoLayout);
-        jpDatoLayout.setHorizontalGroup(
-            jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlblTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
-            .addGroup(jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpDatoLayout.createSequentialGroup()
-                    .addComponent(jlblArchivoT, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jlblArchivoI, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
-        );
-        jpDatoLayout.setVerticalGroup(
-            jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlblTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-            .addGroup(jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jlblArchivoT, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-            .addGroup(jpDatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jlblArchivoI, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-        );
+        jlblMostrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpDatosLayout = new javax.swing.GroupLayout(jpDatos);
         jpDatos.setLayout(jpDatosLayout);
         jpDatosLayout.setHorizontalGroup(
             jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpDatosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jpDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpDatosLayout.createSequentialGroup()
-                            .addComponent(jpArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(100, 100, 100)
-                            .addComponent(jcbTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jpDatosLayout.createSequentialGroup()
-                            .addGap(177, 177, 177)
-                            .addComponent(jlblIngresarDatos))
-                        .addGroup(jpDatosLayout.createSequentialGroup()
-                            .addGap(226, 226, 226)
-                            .addComponent(jbtnTexto))))
-                .addGap(501, 501, 501))
+            .addGroup(jpDatosLayout.createSequentialGroup()
+                .addContainerGap(519, Short.MAX_VALUE)
+                .addGroup(jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpDatosLayout.createSequentialGroup()
+                        .addGroup(jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpDatosLayout.createSequentialGroup()
+                                .addComponent(jpArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100)
+                                .addComponent(jcbTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpDatosLayout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(jlblIngresarDatos))
+                            .addGroup(jpDatosLayout.createSequentialGroup()
+                                .addGap(226, 226, 226)
+                                .addComponent(jbtnTexto)))
+                        .addGap(501, 501, 501))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpDatosLayout.createSequentialGroup()
+                        .addComponent(jlblMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(528, 528, 528))))
         );
         jpDatosLayout.setVerticalGroup(
             jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,9 +400,9 @@ public class JF_OSI extends javax.swing.JFrame {
                     .addComponent(jpArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtnTexto)
-                .addGap(27, 27, 27)
-                .addComponent(jpDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(jlblMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                .addGap(423, 423, 423))
         );
 
         jpEnviar.setPreferredSize(new java.awt.Dimension(400, 283));
@@ -747,16 +725,16 @@ public class JF_OSI extends javax.swing.JFrame {
                 .addComponent(jpIngresoPC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 58, Short.MAX_VALUE)
-                    .addComponent(jpEscogerPC, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
-                    .addGap(0, 60, Short.MAX_VALUE)))
+                    .addGap(0, 69, Short.MAX_VALUE)
+                    .addComponent(jpEscogerPC, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                    .addGap(0, 71, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE))
+                .addComponent(jpDatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(55, Short.MAX_VALUE)
-                    .addComponent(jpEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
-                    .addContainerGap(56, Short.MAX_VALUE)))
+                    .addContainerGap(66, Short.MAX_VALUE)
+                    .addComponent(jpEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+                    .addContainerGap(67, Short.MAX_VALUE)))
         );
 
         pack();
@@ -784,8 +762,6 @@ public class JF_OSI extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jcbTipoDato;
     public javax.swing.JLabel jlblAD;
     public javax.swing.JLabel jlblAO;
-    public javax.swing.JLabel jlblArchivoI;
-    public javax.swing.JLabel jlblArchivoT;
     public javax.swing.JLabel jlblBit;
     public javax.swing.JLabel jlblED;
     public javax.swing.JLabel jlblEO;
@@ -805,6 +781,7 @@ public class JF_OSI extends javax.swing.JFrame {
     public javax.swing.JLabel jlblMACDestino;
     public javax.swing.JLabel jlblMACO;
     public javax.swing.JLabel jlblMACOrigen;
+    public javax.swing.JLabel jlblMostrar;
     public javax.swing.JLabel jlblMoveAD;
     public javax.swing.JLabel jlblMoveAO;
     public javax.swing.JLabel jlblMoveED;
@@ -832,7 +809,6 @@ public class JF_OSI extends javax.swing.JFrame {
     public javax.swing.JLabel jlblSO;
     public javax.swing.JLabel jlblTD;
     public javax.swing.JLabel jlblTO;
-    public javax.swing.JLabel jlblTexto;
     private javax.swing.JMenu jmOSI;
     private javax.swing.JMenu jmPC;
     private javax.swing.JMenuBar jmbOSI;
@@ -841,7 +817,6 @@ public class JF_OSI extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiEscogerPCOD;
     public javax.swing.JMenuItem jmiIngresarPC;
     private javax.swing.JPanel jpArchivo;
-    private javax.swing.JPanel jpDato;
     public javax.swing.JPanel jpDatos;
     public javax.swing.JPanel jpDiagrama;
     public javax.swing.JPanel jpEnviar;
